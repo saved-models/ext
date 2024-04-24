@@ -1,0 +1,25 @@
+id: http://marine.gov.scot/metadata/saved/schema/modelled/
+name: collected
+title: >-
+  SAVED data model: collected data
+prefixes:
+  linkml: https://w3id.org/linkml/
+  saved:  http://marine.gov.scot/metadata/saved/schema/
+imports:
+  - ./core
+  - linkml:types
+default_prefix: saved
+
+slots:
+
+  count_fish_interpolated:
+    description:     Interpolated number of fish in the farm
+    range:           float
+    is_a:            column_modelled
+    narrow_mappings: saved:count_fish_collected
+
+  lice_density_modelled:
+    description:     Modelled lice density (lice per m³)
+    range:           float
+    is_a:            column_modelled
+    narrow_mappings: saved:lice_density_collected

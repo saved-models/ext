@@ -1,0 +1,44 @@
+id: http://marine.gov.scot/metadata/saved/schema/core/
+name: core
+title: >-
+  SAVED data model: core schema, simply defining skeleton of table structure
+prefixes:
+  linkml: https://w3id.org/linkml/
+  saved:  http://marine.gov.scot/metadata/saved/schema/
+imports:
+  - linkml:types
+default_prefix: saved
+
+slots:
+  
+  column_modelled:
+    description:    Column describes modelled data
+  column_collected:
+    description:    Column describes collected data
+  column_descriptive:
+    description:    Column describes data about the world
+
+  title:
+    description:     Concise human-readable name for the element
+    range:           string
+    slot_uri:        dcterms:title
+
+  description:
+    description:     Human-readable description of the element
+    range:           string
+    slot_uri:        dcterms:description
+
+  type:
+    description:     Nature or genre of the element
+    range:           string
+    slot_uri:        dcterms:type
+
+  provenance:
+    description: >-
+      Provenance of an element, or a set of elements. This is distinct
+      from Dublin Core's notion of provenance, which concerns any changes
+      in ownership/custody of the resource since its creation.
+    range:           string
+    narrow_mappings:
+      - saved:notes
+      - dcterms:provenance

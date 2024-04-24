@@ -1,0 +1,1082 @@
+{
+  "name": "meta",
+  "title": "SAVED meta-model",
+  "id": "http://marine.gov.scot/metadata/saved/schema/meta/",
+  "imports": [
+    "linkml:types",
+    "./core",
+    "./collected",
+    "./descriptive",
+    "./job",
+    "./modelled",
+    "./types"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "rap",
+      "prefix_reference": "http://marine.gov.scot/metadata/saved/rap/"
+    },
+    {
+      "prefix_prefix": "saved",
+      "prefix_reference": "http://marine.gov.scot/metadata/saved/schema/"
+    },
+    {
+      "prefix_prefix": "job",
+      "prefix_reference": "http://marine.gov.scot/metadata/saved/schema/job_"
+    }
+  ],
+  "emit_prefixes": [
+    "rap",
+    "saved",
+    "job"
+  ],
+  "default_prefix": "saved",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Text"
+      ],
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#time",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Date"
+      ],
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date_or_datetime",
+      "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "https://w3id.org/linkml/DateOrDatetime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "curie",
+      "definition_uri": "https://w3id.org/linkml/Curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Curie",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpointer",
+      "definition_uri": "https://w3id.org/linkml/Jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpath",
+      "definition_uri": "https://w3id.org/linkml/Jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "sparqlpath",
+      "definition_uri": "https://w3id.org/linkml/Sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "LatLonType",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/LatLonType",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/types/",
+      "base": "str",
+      "uri": "http://marine.gov.scot/metadata/saved/schema/LatLon",
+      "repr": "str",
+      "pattern": "[0-9]+o [0-9]+.[0-9]+[N|W]",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "slots": [
+    {
+      "name": "column_modelled",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/column_modelled",
+      "description": "Column describes modelled data",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/core/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/column_modelled",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "column_collected",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/column_collected",
+      "description": "Column describes collected data",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/core/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/column_collected",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "column_descriptive",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/column_descriptive",
+      "description": "Column describes data about the world",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/core/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/column_descriptive",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "title",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/title",
+      "description": "Concise human-readable name for the element",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/core/",
+      "mappings": [
+        "http://purl.org/dc/terms/title"
+      ],
+      "slot_uri": "http://purl.org/dc/terms/title",
+      "owner": "JobDesc",
+      "domain_of": [
+        "TableDesc",
+        "JobDesc"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "description",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/description",
+      "description": "Human-readable description of the element",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/core/",
+      "mappings": [
+        "http://purl.org/dc/terms/description"
+      ],
+      "slot_uri": "http://purl.org/dc/terms/description",
+      "owner": "TableDesc",
+      "domain_of": [
+        "TableDesc"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "type",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/type",
+      "description": "Nature or genre of the element",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/core/",
+      "mappings": [
+        "http://purl.org/dc/terms/type"
+      ],
+      "slot_uri": "http://purl.org/dc/terms/type",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "provenance",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/provenance",
+      "description": "Provenance of an element, or a set of elements. This is distinct from Dublin Core's notion of provenance, which concerns any changes in ownership/custody of the resource since its creation.",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/core/",
+      "narrow_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/notes",
+        "http://purl.org/dc/terms/provenance"
+      ],
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/provenance",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "count_fish_collected",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/count_fish_collected",
+      "description": "Sampled number of fish in the farm",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/collected/",
+      "narrow_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/count_fish_interpolated"
+      ],
+      "is_a": "column_collected",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/count_fish_collected",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fish_length",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/fish_length",
+      "description": "Length of fish expressed (mm)",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/collected/",
+      "is_a": "column_collected",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/fish_length",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fish_mass",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/fish_mass",
+      "description": "Weight of fish expressed (g)",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/collected/",
+      "is_a": "column_collected",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/fish_mass",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fish_species_common",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/fish_species_common",
+      "description": "Common name of species sampled",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/collected/",
+      "broad_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/fish_species_scientific"
+      ],
+      "is_a": "column_collected",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/fish_species_common",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "fish_species_scientific",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/fish_species_scientific",
+      "description": "Scientific name of species sampled",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/collected/",
+      "broad_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/fish_species_common"
+      ],
+      "is_a": "column_collected",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/fish_species_scientific",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "lice_af_average",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/lice_af_average",
+      "description": "Average number of Salmon lice (adult female) per fish",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/collected/",
+      "is_a": "column_collected",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/lice_af_average",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "lice_af_total",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/lice_af_total",
+      "description": "Total number of Salmon lice per fish",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/collected/",
+      "is_a": "column_collected",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/lice_af_total",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "lice_density_collected",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/lice_density_collected",
+      "description": "Sampled lice density (lice per m\u00b3)",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/collected/",
+      "narrow_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/lice_density_modelled"
+      ],
+      "is_a": "column_collected",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/lice_density_collected",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "northing",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/northing",
+      "description": "'X'-positional data relative to point of origin",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/northing",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "easting",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/easting",
+      "description": "'Y'-positional data relative to point of origin",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/easting",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "national_grid_reference",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/national_grid_reference",
+      "description": "National grid reference (NGR) point of origin",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/national_grid_reference",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "latitude",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/latitude",
+      "description": "Latitude",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/latitude",
+      "range": "string",
+      "any_of": [
+        {
+          "range": "LatLonType",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "float",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "longitude",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/longitude",
+      "description": "Longitude",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/longitude",
+      "range": "string",
+      "any_of": [
+        {
+          "range": "LatLonType",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "float",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "global_coordinate_system",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/global_coordinate_system",
+      "description": "Global coordinate system (GCS) reference point of origin",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/global_coordinate_system",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "depth",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/depth",
+      "description": "Depth in metres",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/depth",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "series",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/series",
+      "description": "Data series to which a given observation belongs",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/series",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "notes",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/notes",
+      "description": "Notes pertinent to observation, a set of observations, or a data-set",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "narrow_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/provenance"
+      ],
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/notes",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "site_name",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/site_name",
+      "description": "Fish farm station/site local name",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/site_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "site_id",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/site_id",
+      "description": "Fish farm station/site global ID",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/site_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cage_id",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/cage_id",
+      "description": "Semi-numeric cage identifier, related to station/site",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/descriptive/",
+      "is_a": "column_descriptive",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/cage_id",
+      "range": "string",
+      "any_of": [
+        {
+          "range": "string",
+          "@type": "AnonymousSlotExpression"
+        },
+        {
+          "range": "integer",
+          "@type": "AnonymousSlotExpression"
+        }
+      ],
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "atomic_name",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/atomic_name",
+      "description": "Short-form name / atom: lower-case, no special characters excepting underscores",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "exact_mappings": [
+        "http://purl.org/dc/elements/1.1/identifier"
+      ],
+      "broad_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/name",
+        "http://purl.org/dc/elements/1.1/title"
+      ],
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/atomic_name",
+      "identifier": true,
+      "owner": "ManifestDesc",
+      "domain_of": [
+        "TableDesc",
+        "JobDesc",
+        "ManifestDesc"
+      ],
+      "range": "string",
+      "required": true,
+      "pattern": "^:?[a-z]+[[a-z]|_|]*$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hash",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/hash",
+      "description": "Checksum of some file",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "exact_mappings": [
+        "https://w3id.org/linkml/hash"
+      ],
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/hash",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "resource_hash",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/resource_hash",
+      "description": "Checksum of resource",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "is_a": "hash",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/resource_hash",
+      "owner": "TableDesc",
+      "domain_of": [
+        "TableDesc"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "path",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/path",
+      "description": "Path or URI",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "exact_mappings": [
+        "https://w3id.org/linkml/path"
+      ],
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/path",
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "resource_path",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/resource_path",
+      "description": "Path or URI of resource",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "is_a": "path",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/resource_path",
+      "owner": "TableDesc",
+      "domain_of": [
+        "TableDesc"
+      ],
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "schema_path",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/schema_path",
+      "description": "Path or URI of schema associated with resource",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "is_a": "path",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/schema_path",
+      "owner": "TableDesc",
+      "domain_of": [
+        "TableDesc"
+      ],
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tables",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/tables",
+      "description": "Specification of mappings between resources and schemas, as well as columns or dimensions to bring into into scope",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/tables",
+      "multivalued": true,
+      "owner": "ManifestDesc",
+      "domain_of": [
+        "ManifestDesc"
+      ],
+      "range": "TableDesc",
+      "required": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "column",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/column",
+      "description": "Column name in table",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/column",
+      "owner": "ColumnDesc",
+      "domain_of": [
+        "ColumnDesc"
+      ],
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variable",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/variable",
+      "description": "Name of variable underpinning column, specific to the job",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/variable",
+      "owner": "ColumnDesc",
+      "domain_of": [
+        "ColumnDesc"
+      ],
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "table",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/table",
+      "description": "Table description from which column is drawn, specifically matching the `atomic_name' field of a given instance of a `TableDesc' class.",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/table",
+      "owner": "ColumnDesc",
+      "domain_of": [
+        "ColumnDesc"
+      ],
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "job_scope",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/job_scope",
+      "description": "A collection of column descriptions",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/job_scope",
+      "multivalued": true,
+      "range": "ColumnDesc",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "job_scope_descriptive",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/job_scope_descriptive",
+      "description": "A collection of column descriptions which describe something about the world",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "is_a": "job_scope",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/job_scope_descriptive",
+      "multivalued": true,
+      "owner": "JobDesc",
+      "domain_of": [
+        "JobDesc"
+      ],
+      "range": "ColumnDesc",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "job_scope_collected",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/job_scope_collected",
+      "description": "A collection of column descriptions which are collected or sampled",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "is_a": "job_scope",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/job_scope_collected",
+      "multivalued": true,
+      "owner": "JobDesc",
+      "domain_of": [
+        "JobDesc"
+      ],
+      "range": "ColumnDesc",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "job_scope_modelled",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/job_scope_modelled",
+      "description": "A collection of column descriptions which are modelled or simulated",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "is_a": "job_scope",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/job_scope_modelled",
+      "multivalued": true,
+      "owner": "JobDesc",
+      "domain_of": [
+        "JobDesc"
+      ],
+      "range": "ColumnDesc",
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "job_type",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/job_type",
+      "description": "While this is analogous to Dublin Core's notion of type, it is specific to jobs proper, because there is a well-defined range of the jobs we know about. Undefined job types cannot be processed.",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "broad_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/type"
+      ],
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/job_type",
+      "owner": "JobDesc",
+      "domain_of": [
+        "JobDesc"
+      ],
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "jobs",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/jobs",
+      "description": "Specification of operations to run on resources and schemas provided",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/jobs",
+      "multivalued": true,
+      "owner": "ManifestDesc",
+      "domain_of": [
+        "ManifestDesc"
+      ],
+      "range": "JobDesc",
+      "required": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gcp_source",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/gcp_source",
+      "description": "GCP account of the generator of the manifest",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/gcp_source",
+      "owner": "ManifestDesc",
+      "domain_of": [
+        "ManifestDesc"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "local_version",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/local_version",
+      "description": "Version number of local submission utility",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "narrow_mappings": [
+        "http://purl.org/pav/version"
+      ],
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/local_version",
+      "owner": "ManifestDesc",
+      "domain_of": [
+        "ManifestDesc"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "count_fish_interpolated",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/count_fish_interpolated",
+      "description": "Interpolated number of fish in the farm",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/modelled/",
+      "narrow_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/count_fish_collected"
+      ],
+      "is_a": "column_modelled",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/count_fish_interpolated",
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "lice_density_modelled",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/lice_density_modelled",
+      "description": "Modelled lice density (lice per m\u00b3)",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/modelled/",
+      "narrow_mappings": [
+        "http://marine.gov.scot/metadata/saved/schema/lice_density_collected"
+      ],
+      "is_a": "column_modelled",
+      "slot_uri": "http://marine.gov.scot/metadata/saved/schema/lice_density_modelled",
+      "range": "float",
+      "@type": "SlotDefinition"
+    }
+  ],
+  "classes": [
+    {
+      "name": "TableDesc",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/TableDesc",
+      "description": "Job manifest: data source descriptive attributes",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slots": [
+        "atomic_name",
+        "title",
+        "description",
+        "resource_path",
+        "schema_path",
+        "resource_hash"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://marine.gov.scot/metadata/saved/schema/TableDesc",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ColumnDesc",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/ColumnDesc",
+      "description": "Job manifest: column scope description and annotations\nThis has three elements:\n  1. The column name\n  2. The table from which the column is or columns are drawn\n  3. The variable underpinning the column, which is specific to the job.",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slots": [
+        "column",
+        "variable",
+        "table"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://marine.gov.scot/metadata/saved/schema/ColumnDesc",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "JobDesc",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/JobDesc",
+      "description": "Job manifest: job specification attributes which specific job sub-classes inherit",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slots": [
+        "atomic_name",
+        "title",
+        "job_type",
+        "job_scope_descriptive",
+        "job_scope_collected",
+        "job_scope_modelled"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://marine.gov.scot/metadata/saved/schema/JobDesc",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ManifestDesc",
+      "definition_uri": "http://marine.gov.scot/metadata/saved/schema/ManifestDesc",
+      "description": "Job manifest: complete specification",
+      "from_schema": "http://marine.gov.scot/metadata/saved/schema/job/",
+      "slots": [
+        "atomic_name",
+        "tables",
+        "jobs",
+        "gcp_source",
+        "local_version"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://marine.gov.scot/metadata/saved/schema/ManifestDesc",
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "meta.yaml",
+  "source_file_date": "2024-04-24T17:09:57",
+  "source_file_size": 472,
+  "generation_date": "2024-04-24T17:19:46",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "project/jsonld/meta.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    "./core.context.jsonld",
+    "./collected.context.jsonld",
+    "./descriptive.context.jsonld",
+    "./job.context.jsonld",
+    "./modelled.context.jsonld",
+    "./types.context.jsonld",
+    {
+      "@base": "http://marine.gov.scot/metadata/saved/schema/"
+    }
+  ]
+}

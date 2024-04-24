@@ -1,0 +1,213 @@
+## Initial hypothetical type of job:
+#
+# Unlike manifests which actually verify data *against* well-defined
+# schemata, the job manifest is explicitly data in and of itself,
+# verified against this schema. The aim is to generate JSON-LD or RDF
+# from this schema + manifest, which is then processed by the RAP.
+#
+# Here is what the LinkML documentation says:
+# [https://linkml.io/linkml/faq/general.html#is-linkml-just-for-metadata]
+#
+#' "LinkML doesn’t draw any hard and fast distinction between data and
+#' metadata, recognizing that “metadata” is often defined in relative
+#' terms."
+#
+## Default prefix for generated job manifests:
+#
+# Although the job manifest is defined as part of the SAVED data model,
+# which lives under the schema prefix `saved/schema/job/', the base
+# prefix used for the generated turtle manifest files is actually
+# `saved/rap/'. It is thus necessary to define any desired prefixes here.
+#
+# Reproducible analytical pipeline or RAP is a term current in the civil
+# service to describe a variety of processes and data pipelines
+# (primarily for statistical analysis and publishing of official
+# statistics and data). The main idea behind it is to make use of free
+# and open source packages (e.g. R or Python instead of proprietary
+# statistical software), reproducibility (e.g. version control, unit
+# tests, literate programming with R Markdown), and producing output data
+# in a variety of open formats.
+#
+# The `saved/rap' directory is intended to be the location from which the
+# job manifest, job results, data and descriptive statistics may be
+# served at a single location, which aligns closely with the concept of a
+# RAP. It also helps that the RAP word is succint and self-explanatory.
+
+id: http://marine.gov.scot/metadata/saved/schema/job/
+name: job
+title: >-
+  SAVED data model: job template specification
+prefixes:
+  dc:      http://purl.org/dc/elements/1.1/
+  dcterms: http://purl.org/dc/terms/
+  linkml:  https://w3id.org/linkml/
+  pav:     http://purl.org/pav/
+  rap:     http://marine.gov.scot/metadata/saved/rap/
+  saved:   http://marine.gov.scot/metadata/saved/schema/
+  job:     http://marine.gov.scot/metadata/saved/schema/job_
+  
+imports:
+  - ./core
+  - linkml:types
+default_prefix: saved
+
+emit_prefixes:
+  - rap
+  - saved
+  - job
+
+slots:
+  
+  atomic_name:
+    description: >-
+      Short-form name / atom: lower-case, no special characters excepting underscores
+    range:           string
+    pattern:         "^:?[a-z]+[[a-z]|_|]*$"
+    exact_mappings:  dc:identifier
+    broad_mappings:
+      - saved:name
+      - dc:title
+    identifier:      true
+    required:        true
+
+  # Table-specific slots to follow:
+  hash:
+    description:     Checksum of some file
+    range:           string
+    exact_mappings:  linkml:hash
+  resource_hash:
+    description:     Checksum of resource
+    is_a:            hash
+    required:        true
+    
+  path:
+    description:     Path or URI
+    range:           uriorcurie
+    exact_mappings:  linkml:path
+  resource_path:
+    description:     Path or URI of resource
+    is_a:            path
+    required:        true
+  schema_path:
+    description:     Path or URI of schema associated with resource
+    is_a:            path
+    required:        true
+    
+  tables:
+    description:     Specification of mappings between resources and schemas, as well as columns or dimensions to bring into into scope
+    multivalued:     true
+    inlined:         true
+    inlined_as_list: true
+    range:           TableDesc
+    required:        true
+    #list_elements_ordered: true
+
+  # Columns scope-specific slots to follow:
+  column:
+    description:     Column name in table
+    range:           string
+    multivalued:     false
+    required:        true
+
+  variable:
+    description:     Name of variable underpinning column, specific to the job
+    range:           uriorcurie
+    multivalued:     false
+    required:        true
+
+  table:
+    description:     Table description from which column is drawn, specifically matching the `atomic_name' field of a given instance of a `TableDesc' class.
+    range:           uriorcurie
+    required:        true
+
+  # Job-specific slots to follow:
+  job_scope:
+    description:     A collection of column descriptions
+    multivalued:     true
+    inlined:         true
+    inlined_as_list: true
+    range:           ColumnDesc
+  job_scope_descriptive:
+    description:     A collection of column descriptions which describe something about the world
+    is_a:            job_scope
+  job_scope_collected:
+    description:     A collection of column descriptions which are collected or sampled
+    is_a:            job_scope
+  job_scope_modelled:
+    description:     A collection of column descriptions which are modelled or simulated
+    is_a:            job_scope
+
+  job_type:
+    description: >-
+      While this is analogous to Dublin Core's notion of type, it is
+      specific to jobs proper, because there is a well-defined range of
+      the jobs we know about. Undefined job types cannot be processed.
+    range:           uriorcurie
+    broad_mappings:  saved:type
+    required:        true
+      
+  jobs:
+    description:     Specification of operations to run on resources and schemas provided
+    multivalued:     true
+    inlined:         true
+    inlined_as_list: true
+    required:        true
+    range:           JobDesc
+
+  gcp_source:
+    description:     GCP account of the generator of the manifest
+    range:           string
+    required:        false
+    
+  local_version:
+    description:     Version number of local submission utility
+    range:           string
+    required:        false
+    narrow_mappings: pav:version
+
+classes:
+
+  TableDesc:
+    description: >-
+      Job manifest: data source descriptive attributes
+    slots:
+      - atomic_name
+      - title
+      - description
+      - resource_path
+      - schema_path
+      - resource_hash
+
+  ColumnDesc:
+    description: >-
+      Job manifest: column scope description and annotations
+
+      This has three elements:
+        1. The column name
+        2. The table from which the column is or columns are drawn
+        3. The variable underpinning the column, which is specific to the job.
+    slots:
+      - column
+      - variable
+      - table
+      
+  JobDesc:
+    description: >-
+      Job manifest: job specification attributes which specific job sub-classes inherit
+    slots:
+      - atomic_name
+      - title
+      - job_type
+      - job_scope_descriptive
+      - job_scope_collected
+      - job_scope_modelled
+    
+  ManifestDesc:
+    description: >-
+      Job manifest: complete specification
+    slots:
+      - atomic_name
+      - tables
+      - jobs
+      - gcp_source
+      - local_version

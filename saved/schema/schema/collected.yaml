@@ -1,0 +1,60 @@
+id: http://marine.gov.scot/metadata/saved/schema/collected/
+name: collected
+title: >-
+  SAVED data model: collected data
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  saved:  http://marine.gov.scot/metadata/saved/schema/
+imports:
+  - ./core
+  - linkml:types
+default_prefix: saved
+
+slots:
+
+  count_fish_collected:
+    description:     Sampled number of fish in the farm
+    range:           float
+    is_a:            column_collected
+    narrow_mappings: saved:count_fish_interpolated
+
+  fish_length:
+    description:     Length of fish expressed (mm)
+    range:           float
+    is_a:            column_collected
+
+  fish_mass:
+    description:     Weight of fish expressed (g)
+    range:           float
+    is_a:            column_collected
+    
+  fish_species_common:
+    description:     Common name of species sampled
+    range:           string
+    is_a:            column_collected
+    broad_mappings:  saved:fish_species_scientific
+    
+  fish_species_scientific:
+    description:     Scientific name of species sampled
+    range:           string
+    is_a:            column_collected
+    broad_mappings:  saved:fish_species_common
+
+  lice_af_average:
+    description:     Average number of Salmon lice (adult female) per fish
+    range:           float
+    is_a:            column_collected
+
+  lice_af_total:
+    description:     Total number of Salmon lice per fish
+    range:           integer
+    is_a:            column_collected
+
+  lice_density_collected:
+    description:     Sampled lice density (lice per m³)
+    range:           float
+    is_a:            column_collected
+    narrow_mappings: saved:lice_density_modelled
+
+  

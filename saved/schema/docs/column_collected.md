@@ -4,7 +4,7 @@
 
 Column describes collected data
 
-URI: [saved:column_collected](http://marine.gov.scot/metadata/saved/schema/column_collected)
+URI: [saved:column_collected](https://marine.gov.scot/metadata/saved/schema/column_collected)
 
 
 ## Domain and Range

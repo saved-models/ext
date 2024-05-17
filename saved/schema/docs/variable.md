@@ -2,14 +2,14 @@
 # Slot: variable
 
 
-Name of variable underpinning column, specific to the job
+Name of variable underpinning column, specific to the job, used for pattern-matching
 
-URI: [saved:variable](http://marine.gov.scot/metadata/saved/schema/variable)
+URI: [saved:variable](https://marine.gov.scot/metadata/saved/schema/variable)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [Uriorcurie](types/Uriorcurie.md)
+None &#8594;  <sub>1..1</sub> [ExtColumnDesc](ExtColumnDesc.md)
 
 ## Parents
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>1..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Used by
 
- * [ColumnDesc](ColumnDesc.md)
+ * [ScopeDesc](ScopeDesc.md)

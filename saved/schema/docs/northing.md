@@ -4,7 +4,7 @@
 
 'X'-positional data relative to point of origin
 
-URI: [saved:northing](http://marine.gov.scot/metadata/saved/schema/northing)
+URI: [saved:northing](https://marine.gov.scot/metadata/saved/schema/northing)
 
 
 ## Domain and Range

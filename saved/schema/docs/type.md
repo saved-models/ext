@@ -4,7 +4,7 @@
 
 Nature or genre of the element
 
-URI: [saved:type](http://marine.gov.scot/metadata/saved/schema/type)
+URI: [saved:type](https://marine.gov.scot/metadata/saved/schema/type)
 
 
 ## Domain and Range

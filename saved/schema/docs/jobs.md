@@ -4,7 +4,7 @@
 
 Specification of operations to run on resources and schemas provided
 
-URI: [saved:jobs](http://marine.gov.scot/metadata/saved/schema/jobs)
+URI: [saved:jobs](https://marine.gov.scot/metadata/saved/schema/jobs)
 
 
 ## Domain and Range

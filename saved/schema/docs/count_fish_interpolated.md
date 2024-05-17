@@ -4,7 +4,7 @@
 
 Interpolated number of fish in the farm
 
-URI: [saved:count_fish_interpolated](http://marine.gov.scot/metadata/saved/schema/count_fish_interpolated)
+URI: [saved:count_fish_interpolated](https://marine.gov.scot/metadata/saved/schema/count_fish_interpolated)
 
 
 ## Domain and Range

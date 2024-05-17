@@ -423,7 +423,7 @@
 
 
 <h1 id="saved-meta-model">SAVED meta-model</h1>
-<p>URI: http://marine.gov.scot/metadata/saved/schema/meta/</p>
+<p>URI: https://marine.gov.scot/metadata/saved/schema/meta/</p>
 <p>Name: meta</p>
 <h2 id="classes">Classes</h2>
 <table>
@@ -435,36 +435,24 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="ColumnDesc/">ColumnDesc</a></td>
-<td>Job manifest: column scope description and annotations</td>
-</tr>
-<tr>
-<td>This has three elements:</td>
-<td></td>
-</tr>
-<tr>
-<td>1. The column name</td>
-<td></td>
-</tr>
-<tr>
-<td>2. The table from which the column is or columns are drawn</td>
-<td></td>
-</tr>
-<tr>
-<td>3. The variable underpinning the column, which is specific to the job.</td>
-<td></td>
+<td><a href="ExtColumnDesc/">ExtColumnDesc</a></td>
+<td>Catch-all external column description</td>
 </tr>
 <tr>
 <td><a href="JobDesc/">JobDesc</a></td>
-<td>Job manifest: job specification attributes which specific job sub-classes inherit</td>
+<td>Manifest: job specification attributes which specific job sub-classes inherit</td>
 </tr>
 <tr>
 <td><a href="ManifestDesc/">ManifestDesc</a></td>
-<td>Job manifest: complete specification</td>
+<td>Manifest: job invocation specification</td>
+</tr>
+<tr>
+<td><a href="ScopeDesc/">ScopeDesc</a></td>
+<td>Manifest: column scope description and attributes including variable underpinning the column</td>
 </tr>
 <tr>
 <td><a href="TableDesc/">TableDesc</a></td>
-<td>Job manifest: data source descriptive attributes</td>
+<td>Manifest: data source descriptive attributes</td>
 </tr>
 </tbody>
 </table>
@@ -630,8 +618,12 @@
 <td>Path or URI of resource</td>
 </tr>
 <tr>
-<td><a href="schema_path/">schema_path</a></td>
-<td>Path or URI of schema associated with resource</td>
+<td><a href="schema_path_ttl/">schema_path_ttl</a></td>
+<td>Path of URI of schema associated with resource (RDF/TTL conversion of LinkML ...</td>
+</tr>
+<tr>
+<td><a href="schema_path_yaml/">schema_path_yaml</a></td>
+<td>Path or URI of schema associated with resource (LinkML YAML)</td>
 </tr>
 <tr>
 <td><a href="series/">series</a></td>
@@ -663,7 +655,7 @@
 </tr>
 <tr>
 <td><a href="variable/">variable</a></td>
-<td>Name of variable underpinning column, specific to the job</td>
+<td>Name of variable underpinning column, specific to the job, used for pattern-m...</td>
 </tr>
 </tbody>
 </table>
@@ -677,7 +669,7 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><a href="JobType/">JobType</a></td>
 <td></td>
 </tr>
 </tbody>

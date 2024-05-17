@@ -4,7 +4,7 @@
 
 Checksum of some file
 
-URI: [saved:hash](http://marine.gov.scot/metadata/saved/schema/hash)
+URI: [saved:hash](https://marine.gov.scot/metadata/saved/schema/hash)
 
 
 ## Domain and Range

@@ -4,7 +4,7 @@
 
 Modelled lice density (lice per m³)
 
-URI: [saved:lice_density_modelled](http://marine.gov.scot/metadata/saved/schema/lice_density_modelled)
+URI: [saved:lice_density_modelled](https://marine.gov.scot/metadata/saved/schema/lice_density_modelled)
 
 
 ## Domain and Range

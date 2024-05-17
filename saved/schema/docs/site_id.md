@@ -4,7 +4,7 @@
 
 Fish farm station/site global ID
 
-URI: [saved:site_id](http://marine.gov.scot/metadata/saved/schema/site_id)
+URI: [saved:site_id](https://marine.gov.scot/metadata/saved/schema/site_id)
 
 
 ## Domain and Range

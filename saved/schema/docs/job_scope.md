@@ -4,12 +4,12 @@
 
 A collection of column descriptions
 
-URI: [saved:job_scope](http://marine.gov.scot/metadata/saved/schema/job_scope)
+URI: [saved:job_scope](https://marine.gov.scot/metadata/saved/schema/job_scope)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [ColumnDesc](ColumnDesc.md)
+None &#8594;  <sub>0..\*</sub> [ScopeDesc](ScopeDesc.md)
 
 ## Parents
 

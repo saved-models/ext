@@ -12,10 +12,11 @@
 
 ### Classes
 
- * [ColumnDesc](ColumnDesc.md) - Job manifest: column scope description and annotations
- * [JobDesc](JobDesc.md) - Job manifest: job specification attributes which specific job sub-classes inherit
- * [ManifestDesc](ManifestDesc.md) - Job manifest: complete specification
- * [TableDesc](TableDesc.md) - Job manifest: data source descriptive attributes
+ * [ExtColumnDesc](ExtColumnDesc.md) - Catch-all external column description
+ * [JobDesc](JobDesc.md) - Manifest: job specification attributes which specific job sub-classes inherit
+ * [ManifestDesc](ManifestDesc.md) - Manifest: job invocation specification
+ * [ScopeDesc](ScopeDesc.md) - Manifest: column scope description and attributes including variable underpinning the column
+ * [TableDesc](TableDesc.md) - Manifest: data source descriptive attributes
 
 ### Mixins
 
@@ -62,16 +63,18 @@
  * [local_version](local_version.md) - Version number of local submission utility
  * [path](path.md) - Path or URI
      * [resource_path](resource_path.md) - Path or URI of resource
-     * [schema_path](schema_path.md) - Path or URI of schema associated with resource
+     * [schema_path_ttl](schema_path_ttl.md) - Path of URI of schema associated with resource (RDF/TTL conversion of LinkML YAML)
+     * [schema_path_yaml](schema_path_yaml.md) - Path or URI of schema associated with resource (LinkML YAML)
  * [provenance](provenance.md) - Provenance of an element, or a set of elements. This is distinct from Dublin Core's notion of provenance, which concerns any changes in ownership/custody of the resource since its creation.
  * [table](table.md) - Table description from which column is drawn, specifically matching the `atomic_name' field of a given instance of a `TableDesc' class.
  * [tables](tables.md) - Specification of mappings between resources and schemas, as well as columns or dimensions to bring into into scope
  * [title](title.md) - Concise human-readable name for the element
  * [type](type.md) - Nature or genre of the element
- * [variable](variable.md) - Name of variable underpinning column, specific to the job
+ * [variable](variable.md) - Name of variable underpinning column, specific to the job, used for pattern-matching
 
 ### Enums
 
+ * [JobType](JobType.md)
 
 ### Subsets
 

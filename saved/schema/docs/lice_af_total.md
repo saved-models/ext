@@ -4,7 +4,7 @@
 
 Total number of Salmon lice per fish
 
-URI: [saved:lice_af_total](http://marine.gov.scot/metadata/saved/schema/lice_af_total)
+URI: [saved:lice_af_total](https://marine.gov.scot/metadata/saved/schema/lice_af_total)
 
 
 ## Domain and Range

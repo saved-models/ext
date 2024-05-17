@@ -4,7 +4,7 @@
 
 Common name of species sampled
 
-URI: [saved:fish_species_common](http://marine.gov.scot/metadata/saved/schema/fish_species_common)
+URI: [saved:fish_species_common](https://marine.gov.scot/metadata/saved/schema/fish_species_common)
 
 
 ## Domain and Range

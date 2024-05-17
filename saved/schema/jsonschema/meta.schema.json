@@ -1,33 +1,24 @@
 {
     "$defs": {
-        "ColumnDesc": {
+        "ExtColumnDesc": {
             "additionalProperties": false,
-            "description": "Job manifest: column scope description and annotations\nThis has three elements:\n  1. The column name\n  2. The table from which the column is or columns are drawn\n  3. The variable underpinning the column, which is specific to the job.",
+            "description": "Catch-all external column description",
             "properties": {
-                "column": {
-                    "description": "Column name in table",
-                    "type": "string"
-                },
-                "table": {
-                    "description": "Table description from which column is drawn, specifically matching the `atomic_name' field of a given instance of a `TableDesc' class.",
-                    "type": "string"
-                },
-                "variable": {
-                    "description": "Name of variable underpinning column, specific to the job",
+                "atomic_name": {
+                    "description": "Short-form name / atom: lower-case, no special characters excepting underscores",
+                    "pattern": "^:?[a-z]+[[a-z]|_|]*$",
                     "type": "string"
                 }
             },
             "required": [
-                "column",
-                "variable",
-                "table"
+                "atomic_name"
             ],
-            "title": "ColumnDesc",
+            "title": "ExtColumnDesc",
             "type": "object"
         },
         "JobDesc": {
             "additionalProperties": false,
-            "description": "Job manifest: job specification attributes which specific job sub-classes inherit",
+            "description": "Manifest: job specification attributes which specific job sub-classes inherit",
             "properties": {
                 "atomic_name": {
                     "description": "Short-form name / atom: lower-case, no special characters excepting underscores",
@@ -37,27 +28,27 @@
                 "job_scope_collected": {
                     "description": "A collection of column descriptions which are collected or sampled",
                     "items": {
-                        "$ref": "#/$defs/ColumnDesc"
+                        "$ref": "#/$defs/ScopeDesc"
                     },
                     "type": "array"
                 },
                 "job_scope_descriptive": {
                     "description": "A collection of column descriptions which describe something about the world",
                     "items": {
-                        "$ref": "#/$defs/ColumnDesc"
+                        "$ref": "#/$defs/ScopeDesc"
                     },
                     "type": "array"
                 },
                 "job_scope_modelled": {
                     "description": "A collection of column descriptions which are modelled or simulated",
                     "items": {
-                        "$ref": "#/$defs/ColumnDesc"
+                        "$ref": "#/$defs/ScopeDesc"
                     },
                     "type": "array"
                 },
                 "job_type": {
-                    "description": "While this is analogous to Dublin Core's notion of type, it is specific to jobs proper, because there is a well-defined range of the jobs we know about. Undefined job types cannot be processed.",
-                    "type": "string"
+                    "$ref": "#/$defs/JobType",
+                    "description": "While this is analogous to Dublin Core's notion of type, it is specific to jobs proper, because there is a well-defined range of the jobs we know about. Undefined job types cannot be processed."
                 },
                 "title": {
                     "description": "Concise human-readable name for the element",
@@ -71,9 +62,18 @@
             "title": "JobDesc",
             "type": "object"
         },
+        "JobType": {
+            "description": "",
+            "enum": [
+                "ignore",
+                "density"
+            ],
+            "title": "JobType",
+            "type": "string"
+        },
         "ManifestDesc": {
             "additionalProperties": false,
-            "description": "Job manifest: complete specification",
+            "description": "Manifest: job invocation specification",
             "properties": {
                 "atomic_name": {
                     "description": "Short-form name / atom: lower-case, no special characters excepting underscores",
@@ -111,9 +111,34 @@
             "title": "ManifestDesc",
             "type": "object"
         },
+        "ScopeDesc": {
+            "additionalProperties": false,
+            "description": "Manifest: column scope description and attributes including variable underpinning the column",
+            "properties": {
+                "column": {
+                    "description": "Column name in table",
+                    "type": "string"
+                },
+                "table": {
+                    "description": "Table description from which column is drawn, specifically matching the `atomic_name' field of a given instance of a `TableDesc' class.",
+                    "type": "string"
+                },
+                "variable": {
+                    "description": "Name of variable underpinning column, specific to the job, used for pattern-matching",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "column",
+                "variable",
+                "table"
+            ],
+            "title": "ScopeDesc",
+            "type": "object"
+        },
         "TableDesc": {
             "additionalProperties": false,
-            "description": "Job manifest: data source descriptive attributes",
+            "description": "Manifest: data source descriptive attributes",
             "properties": {
                 "atomic_name": {
                     "description": "Short-form name / atom: lower-case, no special characters excepting underscores",
@@ -132,8 +157,12 @@
                     "description": "Path or URI of resource",
                     "type": "string"
                 },
-                "schema_path": {
-                    "description": "Path or URI of schema associated with resource",
+                "schema_path_ttl": {
+                    "description": "Path of URI of schema associated with resource (RDF/TTL conversion of LinkML YAML)",
+                    "type": "string"
+                },
+                "schema_path_yaml": {
+                    "description": "Path or URI of schema associated with resource (LinkML YAML)",
                     "type": "string"
                 },
                 "title": {
@@ -144,14 +173,14 @@
             "required": [
                 "atomic_name",
                 "resource_path",
-                "schema_path",
-                "resource_hash"
+                "resource_hash",
+                "schema_path_yaml"
             ],
             "title": "TableDesc",
             "type": "object"
         }
     },
-    "$id": "http://marine.gov.scot/metadata/saved/schema/meta/",
+    "$id": "https://marine.gov.scot/metadata/saved/schema/meta/",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",

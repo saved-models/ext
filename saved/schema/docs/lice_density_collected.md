@@ -4,7 +4,7 @@
 
 Sampled lice density (lice per m³)
 
-URI: [saved:lice_density_collected](http://marine.gov.scot/metadata/saved/schema/lice_density_collected)
+URI: [saved:lice_density_collected](https://marine.gov.scot/metadata/saved/schema/lice_density_collected)
 
 
 ## Domain and Range

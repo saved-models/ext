@@ -4,12 +4,12 @@
 
 Path or URI
 
-URI: [saved:path](http://marine.gov.scot/metadata/saved/schema/path)
+URI: [saved:path](https://marine.gov.scot/metadata/saved/schema/path)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
+None &#8594;  <sub>0..1</sub> [Uri](types/Uri.md)
 
 ## Parents
 
@@ -17,7 +17,8 @@ None &#8594;  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 ## Children
 
  *  [resource_path](resource_path.md)
- *  [schema_path](schema_path.md)
+ *  [schema_path_ttl](schema_path_ttl.md)
+ *  [schema_path_yaml](schema_path_yaml.md)
 
 ## Used by
 

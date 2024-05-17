@@ -4,12 +4,12 @@
 
 Path or URI of resource
 
-URI: [saved:resource_path](http://marine.gov.scot/metadata/saved/schema/resource_path)
+URI: [saved:resource_path](https://marine.gov.scot/metadata/saved/schema/resource_path)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [Uriorcurie](types/Uriorcurie.md)
+None &#8594;  <sub>1..1</sub> [Uri](types/Uri.md)
 
 ## Parents
 

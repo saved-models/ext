@@ -4,7 +4,7 @@
 
 Length of fish expressed (mm)
 
-URI: [saved:fish_length](http://marine.gov.scot/metadata/saved/schema/fish_length)
+URI: [saved:fish_length](https://marine.gov.scot/metadata/saved/schema/fish_length)
 
 
 ## Domain and Range

@@ -4,7 +4,7 @@
 
 Depth in metres
 
-URI: [saved:depth](http://marine.gov.scot/metadata/saved/schema/depth)
+URI: [saved:depth](https://marine.gov.scot/metadata/saved/schema/depth)
 
 
 ## Domain and Range

@@ -4,7 +4,7 @@
 
 Human-readable description of the element
 
-URI: [saved:description](http://marine.gov.scot/metadata/saved/schema/description)
+URI: [saved:description](https://marine.gov.scot/metadata/saved/schema/description)
 
 
 ## Domain and Range

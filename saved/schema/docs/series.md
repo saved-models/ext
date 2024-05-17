@@ -4,7 +4,7 @@
 
 Data series to which a given observation belongs
 
-URI: [saved:series](http://marine.gov.scot/metadata/saved/schema/series)
+URI: [saved:series](https://marine.gov.scot/metadata/saved/schema/series)
 
 
 ## Domain and Range

@@ -2,9 +2,9 @@
 # Class: ManifestDesc
 
 
-Job manifest: complete specification
+Manifest: job invocation specification
 
-URI: [saved:ManifestDesc](http://marine.gov.scot/metadata/saved/schema/ManifestDesc)
+URI: [saved:ManifestDesc](https://marine.gov.scot/metadata/saved/schema/ManifestDesc)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TableDesc],[JobDesc]<jobs%201..*-++[ManifestDesc&#124;atomic_name:string;gcp_source:string%20%3F;local_version:string%20%3F],[TableDesc]<tables%201..*-++[ManifestDesc],[JobDesc])](https://yuml.me/diagram/nofunky;dir:TB/class/[TableDesc],[JobDesc]<jobs%201..*-++[ManifestDesc&#124;atomic_name:string;gcp_source:string%20%3F;local_version:string%20%3F],[TableDesc]<tables%201..*-++[ManifestDesc],[JobDesc])

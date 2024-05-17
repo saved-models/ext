@@ -2,112 +2,121 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix pav: <http://purl.org/pav/> .
-@prefix saved: <http://marine.gov.scot/metadata/saved/schema/> .
+@prefix rap: <https://marine.gov.scot/metadata/saved/rap/> .
+@prefix saved: <https://marine.gov.scot/metadata/saved/schema/> .
 @prefix schema1: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix shex: <http://www.w3.org/ns/shex#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://marine.gov.scot/metadata/saved/schema/meta> a saved:SchemaDefinition ;
+saved:meta a saved:SchemaDefinition ;
     saved:default_prefix "saved" ;
-    saved:emit_prefixes "rap",
+    saved:emit_prefixes "job",
+        "rap",
         "saved" ;
     saved:metamodel_version "1.7.0" ;
     saved:source_file "meta.yaml" ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dcterms:title "SAVED meta-model" ;
-    sh:declare [ sh:namespace <http://marine.gov.scot/metadata/saved/rap/> ;
-            sh:prefix "rap" ],
+    sh:declare [ sh:namespace saved:job_ ;
+            sh:prefix "job" ],
+        [ sh:namespace saved: ;
+            sh:prefix "saved" ],
         [ sh:namespace linkml: ;
             sh:prefix "linkml" ],
-        [ sh:namespace <http://marine.gov.scot/metadata/saved/schema/> ;
-            sh:prefix "saved" ] ;
-    linkml:classes <http://marine.gov.scot/metadata/saved/schema/ColumnDesc>,
-        <http://marine.gov.scot/metadata/saved/schema/JobDesc>,
-        <http://marine.gov.scot/metadata/saved/schema/ManifestDesc>,
-        <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:default_range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:generation_date "2024-04-24T16:48:56"^^xsd:dateTime ;
-    linkml:id <http://marine.gov.scot/metadata/saved/schema/meta/> ;
-    linkml:imports <http://marine.gov.scot/metadata/saved/schema/collected>,
-        <http://marine.gov.scot/metadata/saved/schema/core>,
-        <http://marine.gov.scot/metadata/saved/schema/descriptive>,
-        <http://marine.gov.scot/metadata/saved/schema/job>,
-        <http://marine.gov.scot/metadata/saved/schema/modelled>,
-        <http://marine.gov.scot/metadata/saved/schema/types>,
+        [ sh:namespace dcterms: ;
+            sh:prefix "dcterms" ],
+        [ sh:namespace rap: ;
+            sh:prefix "rap" ] ;
+    linkml:classes saved:ExtColumnDesc,
+        saved:JobDesc,
+        saved:ManifestDesc,
+        saved:ScopeDesc,
+        saved:TableDesc ;
+    linkml:default_range saved:string ;
+    linkml:enums saved:JobType ;
+    linkml:generation_date "2024-05-17T16:31:22"^^xsd:dateTime ;
+    linkml:id <https://marine.gov.scot/metadata/saved/schema/meta/> ;
+    linkml:imports saved:collected,
+        saved:core,
+        saved:descriptive,
+        saved:job,
+        saved:modelled,
+        saved:types,
         linkml:types ;
-    linkml:slots <http://marine.gov.scot/metadata/saved/schema/atomic_name>,
-        <http://marine.gov.scot/metadata/saved/schema/cage_id>,
-        <http://marine.gov.scot/metadata/saved/schema/column>,
-        <http://marine.gov.scot/metadata/saved/schema/column_collected>,
-        <http://marine.gov.scot/metadata/saved/schema/column_descriptive>,
-        <http://marine.gov.scot/metadata/saved/schema/column_modelled>,
-        <http://marine.gov.scot/metadata/saved/schema/count_fish_collected>,
-        <http://marine.gov.scot/metadata/saved/schema/count_fish_interpolated>,
-        <http://marine.gov.scot/metadata/saved/schema/depth>,
-        <http://marine.gov.scot/metadata/saved/schema/description>,
-        <http://marine.gov.scot/metadata/saved/schema/easting>,
-        <http://marine.gov.scot/metadata/saved/schema/fish_length>,
-        <http://marine.gov.scot/metadata/saved/schema/fish_mass>,
-        <http://marine.gov.scot/metadata/saved/schema/fish_species_common>,
-        <http://marine.gov.scot/metadata/saved/schema/fish_species_scientific>,
-        <http://marine.gov.scot/metadata/saved/schema/gcp_source>,
-        <http://marine.gov.scot/metadata/saved/schema/global_coordinate_system>,
-        <http://marine.gov.scot/metadata/saved/schema/hash>,
-        <http://marine.gov.scot/metadata/saved/schema/job_scope>,
-        <http://marine.gov.scot/metadata/saved/schema/job_scope_collected>,
-        <http://marine.gov.scot/metadata/saved/schema/job_scope_descriptive>,
-        <http://marine.gov.scot/metadata/saved/schema/job_scope_modelled>,
-        <http://marine.gov.scot/metadata/saved/schema/job_type>,
-        <http://marine.gov.scot/metadata/saved/schema/jobs>,
-        <http://marine.gov.scot/metadata/saved/schema/latitude>,
-        <http://marine.gov.scot/metadata/saved/schema/lice_af_average>,
-        <http://marine.gov.scot/metadata/saved/schema/lice_af_total>,
-        <http://marine.gov.scot/metadata/saved/schema/lice_density_collected>,
-        <http://marine.gov.scot/metadata/saved/schema/lice_density_modelled>,
-        <http://marine.gov.scot/metadata/saved/schema/local_version>,
-        <http://marine.gov.scot/metadata/saved/schema/longitude>,
-        <http://marine.gov.scot/metadata/saved/schema/national_grid_reference>,
-        <http://marine.gov.scot/metadata/saved/schema/northing>,
-        <http://marine.gov.scot/metadata/saved/schema/notes>,
-        <http://marine.gov.scot/metadata/saved/schema/path>,
-        <http://marine.gov.scot/metadata/saved/schema/provenance>,
-        <http://marine.gov.scot/metadata/saved/schema/resource_hash>,
-        <http://marine.gov.scot/metadata/saved/schema/resource_path>,
-        <http://marine.gov.scot/metadata/saved/schema/schema_path>,
-        <http://marine.gov.scot/metadata/saved/schema/series>,
-        <http://marine.gov.scot/metadata/saved/schema/site_id>,
-        <http://marine.gov.scot/metadata/saved/schema/site_name>,
-        <http://marine.gov.scot/metadata/saved/schema/table>,
-        <http://marine.gov.scot/metadata/saved/schema/tables>,
-        <http://marine.gov.scot/metadata/saved/schema/title>,
-        <http://marine.gov.scot/metadata/saved/schema/type>,
-        <http://marine.gov.scot/metadata/saved/schema/variable> ;
-    linkml:source_file_date "2024-04-24T16:47:54"^^xsd:dateTime ;
-    linkml:source_file_size 537 ;
-    linkml:types <http://marine.gov.scot/metadata/saved/schema/LatLonType>,
-        <http://marine.gov.scot/metadata/saved/schema/boolean>,
-        <http://marine.gov.scot/metadata/saved/schema/curie>,
-        <http://marine.gov.scot/metadata/saved/schema/date>,
-        <http://marine.gov.scot/metadata/saved/schema/date_or_datetime>,
-        <http://marine.gov.scot/metadata/saved/schema/datetime>,
-        <http://marine.gov.scot/metadata/saved/schema/decimal>,
-        <http://marine.gov.scot/metadata/saved/schema/double>,
-        <http://marine.gov.scot/metadata/saved/schema/float>,
-        <http://marine.gov.scot/metadata/saved/schema/integer>,
-        <http://marine.gov.scot/metadata/saved/schema/jsonpath>,
-        <http://marine.gov.scot/metadata/saved/schema/jsonpointer>,
-        <http://marine.gov.scot/metadata/saved/schema/ncname>,
-        <http://marine.gov.scot/metadata/saved/schema/nodeidentifier>,
-        <http://marine.gov.scot/metadata/saved/schema/objectidentifier>,
-        <http://marine.gov.scot/metadata/saved/schema/sparqlpath>,
-        <http://marine.gov.scot/metadata/saved/schema/string>,
-        <http://marine.gov.scot/metadata/saved/schema/time>,
-        <http://marine.gov.scot/metadata/saved/schema/uri>,
-        <http://marine.gov.scot/metadata/saved/schema/uriorcurie> .
+    linkml:slots saved:atomic_name,
+        saved:cage_id,
+        saved:column,
+        saved:column_collected,
+        saved:column_descriptive,
+        saved:column_modelled,
+        saved:count_fish_collected,
+        saved:count_fish_interpolated,
+        saved:depth,
+        saved:description,
+        saved:easting,
+        saved:fish_length,
+        saved:fish_mass,
+        saved:fish_species_common,
+        saved:fish_species_scientific,
+        saved:gcp_source,
+        saved:global_coordinate_system,
+        saved:hash,
+        saved:job_scope,
+        saved:job_scope_collected,
+        saved:job_scope_descriptive,
+        saved:job_scope_modelled,
+        saved:job_type,
+        saved:jobs,
+        saved:latitude,
+        saved:lice_af_average,
+        saved:lice_af_total,
+        saved:lice_density_collected,
+        saved:lice_density_modelled,
+        saved:local_version,
+        saved:longitude,
+        saved:national_grid_reference,
+        saved:northing,
+        saved:notes,
+        saved:path,
+        saved:provenance,
+        saved:resource_hash,
+        saved:resource_path,
+        saved:schema_path_ttl,
+        saved:schema_path_yaml,
+        saved:series,
+        saved:site_id,
+        saved:site_name,
+        saved:table,
+        saved:tables,
+        saved:title,
+        saved:type,
+        saved:variable ;
+    linkml:source_file_date "2024-05-17T16:30:54"^^xsd:dateTime ;
+    linkml:source_file_size 470 ;
+    linkml:types saved:LatLonType,
+        saved:boolean,
+        saved:curie,
+        saved:date,
+        saved:date_or_datetime,
+        saved:datetime,
+        saved:decimal,
+        saved:double,
+        saved:float,
+        saved:integer,
+        saved:jsonpath,
+        saved:jsonpointer,
+        saved:ncname,
+        saved:nodeidentifier,
+        saved:objectidentifier,
+        saved:sparqlpath,
+        saved:string,
+        saved:time,
+        saved:uri,
+        saved:uriorcurie .
 
-<http://marine.gov.scot/metadata/saved/schema/boolean> a saved:TypeDefinition ;
+saved:boolean a saved:TypeDefinition ;
     saved:base "Bool" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"." ;
@@ -118,7 +127,7 @@
     linkml:definition_uri linkml:Boolean ;
     linkml:uri xsd:boolean .
 
-<http://marine.gov.scot/metadata/saved/schema/curie> a saved:TypeDefinition ;
+saved:curie a saved:TypeDefinition ;
     saved:base "Curie" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"." ;
@@ -131,7 +140,7 @@
     linkml:definition_uri linkml:Curie ;
     linkml:uri xsd:string .
 
-<http://marine.gov.scot/metadata/saved/schema/date> a saved:TypeDefinition ;
+saved:date a saved:TypeDefinition ;
     saved:base "XSDDate" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\".",
@@ -143,7 +152,7 @@
     linkml:definition_uri linkml:Date ;
     linkml:uri xsd:date .
 
-<http://marine.gov.scot/metadata/saved/schema/date_or_datetime> a saved:TypeDefinition ;
+saved:date_or_datetime a saved:TypeDefinition ;
     saved:base "str" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"." ;
@@ -153,7 +162,7 @@
     linkml:definition_uri linkml:DateOrDatetime ;
     linkml:uri linkml:DateOrDatetime .
 
-<http://marine.gov.scot/metadata/saved/schema/datetime> a saved:TypeDefinition ;
+saved:datetime a saved:TypeDefinition ;
     saved:base "XSDDateTime" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"." ;
@@ -164,7 +173,7 @@
     linkml:definition_uri linkml:Datetime ;
     linkml:uri xsd:dateTime .
 
-<http://marine.gov.scot/metadata/saved/schema/decimal> a saved:TypeDefinition ;
+saved:decimal a saved:TypeDefinition ;
     saved:base "Decimal" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"." ;
@@ -174,7 +183,9 @@
     linkml:definition_uri linkml:Decimal ;
     linkml:uri xsd:decimal .
 
-<http://marine.gov.scot/metadata/saved/schema/double> a saved:TypeDefinition ;
+saved:density dcterms:description "ODE version of the sea lice accumulation model" .
+
+saved:double a saved:TypeDefinition ;
     saved:base "float" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"." ;
@@ -184,7 +195,9 @@
     linkml:definition_uri linkml:Double ;
     linkml:uri xsd:double .
 
-<http://marine.gov.scot/metadata/saved/schema/jsonpath> a saved:TypeDefinition ;
+saved:ignore dcterms:description "Dummy job to ignore: Associated job description may describe arbitrary columns, underlying variables, or tables" .
+
+saved:jsonpath a saved:TypeDefinition ;
     saved:base "str" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"." ;
@@ -195,7 +208,7 @@
     linkml:definition_uri linkml:Jsonpath ;
     linkml:uri xsd:string .
 
-<http://marine.gov.scot/metadata/saved/schema/jsonpointer> a saved:TypeDefinition ;
+saved:jsonpointer a saved:TypeDefinition ;
     saved:base "str" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"." ;
@@ -206,7 +219,7 @@
     linkml:definition_uri linkml:Jsonpointer ;
     linkml:uri xsd:string .
 
-<http://marine.gov.scot/metadata/saved/schema/ncname> a saved:TypeDefinition ;
+saved:ncname a saved:TypeDefinition ;
     saved:base "NCName" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"." ;
@@ -216,7 +229,7 @@
     linkml:definition_uri linkml:Ncname ;
     linkml:uri xsd:string .
 
-<http://marine.gov.scot/metadata/saved/schema/nodeidentifier> a saved:TypeDefinition ;
+saved:nodeidentifier a saved:TypeDefinition ;
     saved:base "NodeIdentifier" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"." ;
@@ -226,7 +239,7 @@
     linkml:definition_uri linkml:Nodeidentifier ;
     linkml:uri shex:nonLiteral .
 
-<http://marine.gov.scot/metadata/saved/schema/objectidentifier> a saved:TypeDefinition ;
+saved:objectidentifier a saved:TypeDefinition ;
     saved:base "ElementIdentifier" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"." ;
@@ -237,7 +250,7 @@
     linkml:definition_uri linkml:Objectidentifier ;
     linkml:uri shex:iri .
 
-<http://marine.gov.scot/metadata/saved/schema/sparqlpath> a saved:TypeDefinition ;
+saved:sparqlpath a saved:TypeDefinition ;
     saved:base "str" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"." ;
@@ -248,7 +261,7 @@
     linkml:definition_uri linkml:Sparqlpath ;
     linkml:uri xsd:string .
 
-<http://marine.gov.scot/metadata/saved/schema/time> a saved:TypeDefinition ;
+saved:time a saved:TypeDefinition ;
     saved:base "XSDTime" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\".",
@@ -260,7 +273,464 @@
     linkml:definition_uri linkml:Time ;
     linkml:uri xsd:time .
 
-<http://marine.gov.scot/metadata/saved/schema/uri> a saved:TypeDefinition ;
+saved:uriorcurie a saved:TypeDefinition ;
+    saved:base "URIorCURIE" ;
+    saved:imported_from "linkml:types" ;
+    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"." ;
+    saved:repr "str" ;
+    dcterms:description "a URI or a CURIE" ;
+    skos:inScheme linkml:types ;
+    linkml:definition_uri linkml:Uriorcurie ;
+    linkml:uri xsd:anyURI .
+
+saved:JobType skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:JobType ;
+    linkml:permissible_values saved:density,
+        saved:ignore .
+
+saved:cage_id a saved:SlotDefinition ;
+    dcterms:description "Semi-numeric cage identifier, related to station/site" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:any_of [ a saved:AnonymousSlotExpression ;
+            linkml:range saved:string ],
+        [ a saved:AnonymousSlotExpression ;
+            linkml:range saved:integer ] ;
+    linkml:definition_uri saved:cage_id ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:cage_id .
+
+saved:depth a saved:SlotDefinition ;
+    dcterms:description "Depth in metres" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:definition_uri saved:depth ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:float ;
+    linkml:slot_uri saved:depth .
+
+saved:description a saved:SlotDefinition ;
+    dcterms:description "Human-readable description of the element" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/core/> ;
+    skos:mappingRelation dcterms:description ;
+    linkml:definition_uri saved:description ;
+    linkml:domain_of saved:TableDesc ;
+    linkml:owner saved:TableDesc ;
+    linkml:range saved:string ;
+    linkml:slot_uri dcterms:description .
+
+saved:easting a saved:SlotDefinition ;
+    dcterms:description "'Y'-positional data relative to point of origin" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:definition_uri saved:easting ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:integer ;
+    linkml:slot_uri saved:easting .
+
+saved:fish_length a saved:SlotDefinition ;
+    dcterms:description "Length of fish expressed (mm)" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/collected/> ;
+    linkml:definition_uri saved:fish_length ;
+    linkml:is_a saved:column_collected ;
+    linkml:range saved:float ;
+    linkml:slot_uri saved:fish_length .
+
+saved:fish_mass a saved:SlotDefinition ;
+    dcterms:description "Weight of fish expressed (g)" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/collected/> ;
+    linkml:definition_uri saved:fish_mass ;
+    linkml:is_a saved:column_collected ;
+    linkml:range saved:float ;
+    linkml:slot_uri saved:fish_mass .
+
+saved:global_coordinate_system a saved:SlotDefinition ;
+    dcterms:description "Global coordinate system (GCS) reference point of origin" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:definition_uri saved:global_coordinate_system ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:global_coordinate_system .
+
+saved:latitude a saved:SlotDefinition ;
+    dcterms:description "Latitude" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:any_of [ a saved:AnonymousSlotExpression ;
+            linkml:range saved:float ],
+        [ a saved:AnonymousSlotExpression ;
+            linkml:range saved:LatLonType ] ;
+    linkml:definition_uri saved:latitude ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:latitude .
+
+saved:lice_af_average a saved:SlotDefinition ;
+    dcterms:description "Average number of Salmon lice (adult female) per fish" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/collected/> ;
+    linkml:definition_uri saved:lice_af_average ;
+    linkml:is_a saved:column_collected ;
+    linkml:range saved:float ;
+    linkml:slot_uri saved:lice_af_average .
+
+saved:lice_af_total a saved:SlotDefinition ;
+    dcterms:description "Total number of Salmon lice per fish" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/collected/> ;
+    linkml:definition_uri saved:lice_af_total ;
+    linkml:is_a saved:column_collected ;
+    linkml:range saved:integer ;
+    linkml:slot_uri saved:lice_af_total .
+
+saved:longitude a saved:SlotDefinition ;
+    dcterms:description "Longitude" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:any_of [ a saved:AnonymousSlotExpression ;
+            linkml:range saved:float ],
+        [ a saved:AnonymousSlotExpression ;
+            linkml:range saved:LatLonType ] ;
+    linkml:definition_uri saved:longitude ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:longitude .
+
+saved:national_grid_reference a saved:SlotDefinition ;
+    dcterms:description "National grid reference (NGR) point of origin" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:definition_uri saved:national_grid_reference ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:national_grid_reference .
+
+saved:northing a saved:SlotDefinition ;
+    dcterms:description "'X'-positional data relative to point of origin" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:definition_uri saved:northing ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:integer ;
+    linkml:slot_uri saved:northing .
+
+saved:series a saved:SlotDefinition ;
+    dcterms:description "Data series to which a given observation belongs" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:definition_uri saved:series ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:series .
+
+saved:site_id a saved:SlotDefinition ;
+    dcterms:description "Fish farm station/site global ID" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:definition_uri saved:site_id ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:site_id .
+
+saved:site_name a saved:SlotDefinition ;
+    dcterms:description "Fish farm station/site local name" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    linkml:definition_uri saved:site_name ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:site_name .
+
+saved:type a saved:SlotDefinition ;
+    dcterms:description "Nature or genre of the element" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/core/> ;
+    skos:mappingRelation dcterms:type ;
+    linkml:definition_uri saved:type ;
+    linkml:range saved:string ;
+    linkml:slot_uri dcterms:type .
+
+saved:LatLonType a saved:TypeDefinition ;
+    saved:base "str" ;
+    saved:pattern "[0-9]+o [0-9]+.[0-9]+[N|W]" ;
+    saved:repr "str" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/types/> ;
+    linkml:definition_uri saved:LatLonType ;
+    linkml:uri saved:LatLon .
+
+saved:column a saved:SlotDefinition ;
+    dcterms:description "Column name in table" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:column ;
+    linkml:domain_of saved:ScopeDesc ;
+    linkml:owner saved:ScopeDesc ;
+    linkml:range saved:string ;
+    linkml:required true ;
+    linkml:slot_uri saved:column .
+
+saved:count_fish_collected a saved:SlotDefinition ;
+    dcterms:description "Sampled number of fish in the farm" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/collected/> ;
+    skos:narrowMatch saved:count_fish_interpolated ;
+    linkml:definition_uri saved:count_fish_collected ;
+    linkml:is_a saved:column_collected ;
+    linkml:range saved:float ;
+    linkml:slot_uri saved:count_fish_collected .
+
+saved:count_fish_interpolated a saved:SlotDefinition ;
+    dcterms:description "Interpolated number of fish in the farm" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/modelled/> ;
+    skos:narrowMatch saved:count_fish_collected ;
+    linkml:definition_uri saved:count_fish_interpolated ;
+    linkml:is_a saved:column_modelled ;
+    linkml:range saved:float ;
+    linkml:slot_uri saved:count_fish_interpolated .
+
+saved:fish_species_common a saved:SlotDefinition ;
+    dcterms:description "Common name of species sampled" ;
+    skos:broadMatch saved:fish_species_scientific ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/collected/> ;
+    linkml:definition_uri saved:fish_species_common ;
+    linkml:is_a saved:column_collected ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:fish_species_common .
+
+saved:fish_species_scientific a saved:SlotDefinition ;
+    dcterms:description "Scientific name of species sampled" ;
+    skos:broadMatch saved:fish_species_common ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/collected/> ;
+    linkml:definition_uri saved:fish_species_scientific ;
+    linkml:is_a saved:column_collected ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:fish_species_scientific .
+
+saved:gcp_source a saved:SlotDefinition ;
+    dcterms:description "GCP account of the generator of the manifest" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:gcp_source ;
+    linkml:domain_of saved:ManifestDesc ;
+    linkml:owner saved:ManifestDesc ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:gcp_source .
+
+saved:hash a saved:SlotDefinition ;
+    dcterms:description "Checksum of some file" ;
+    skos:exactMatch linkml:hash ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:hash ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:hash .
+
+saved:job_scope_collected a saved:SlotDefinition ;
+    dcterms:description "A collection of column descriptions which are collected or sampled" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:job_scope_collected ;
+    linkml:domain_of saved:JobDesc ;
+    linkml:inlined true ;
+    linkml:inlined_as_list true ;
+    linkml:is_a saved:job_scope ;
+    linkml:multivalued true ;
+    linkml:owner saved:JobDesc ;
+    linkml:range saved:ScopeDesc ;
+    linkml:slot_uri saved:job_scope_collected .
+
+saved:job_scope_descriptive a saved:SlotDefinition ;
+    dcterms:description "A collection of column descriptions which describe something about the world" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:job_scope_descriptive ;
+    linkml:domain_of saved:JobDesc ;
+    linkml:inlined true ;
+    linkml:inlined_as_list true ;
+    linkml:is_a saved:job_scope ;
+    linkml:multivalued true ;
+    linkml:owner saved:JobDesc ;
+    linkml:range saved:ScopeDesc ;
+    linkml:slot_uri saved:job_scope_descriptive .
+
+saved:job_scope_modelled a saved:SlotDefinition ;
+    dcterms:description "A collection of column descriptions which are modelled or simulated" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:job_scope_modelled ;
+    linkml:domain_of saved:JobDesc ;
+    linkml:inlined true ;
+    linkml:inlined_as_list true ;
+    linkml:is_a saved:job_scope ;
+    linkml:multivalued true ;
+    linkml:owner saved:JobDesc ;
+    linkml:range saved:ScopeDesc ;
+    linkml:slot_uri saved:job_scope_modelled .
+
+saved:job_type a saved:SlotDefinition ;
+    dcterms:description "While this is analogous to Dublin Core's notion of type, it is specific to jobs proper, because there is a well-defined range of the jobs we know about. Undefined job types cannot be processed." ;
+    skos:broadMatch saved:type ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:job_type ;
+    linkml:domain_of saved:JobDesc ;
+    linkml:owner saved:JobDesc ;
+    linkml:range saved:JobType ;
+    linkml:required true ;
+    linkml:slot_uri saved:job_type .
+
+saved:jobs a saved:SlotDefinition ;
+    dcterms:description "Specification of operations to run on resources and schemas provided" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:jobs ;
+    linkml:domain_of saved:ManifestDesc ;
+    linkml:inlined true ;
+    linkml:inlined_as_list true ;
+    linkml:multivalued true ;
+    linkml:owner saved:ManifestDesc ;
+    linkml:range saved:JobDesc ;
+    linkml:required true ;
+    linkml:slot_uri saved:jobs .
+
+saved:lice_density_collected a saved:SlotDefinition ;
+    dcterms:description "Sampled lice density (lice per m³)" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/collected/> ;
+    skos:narrowMatch saved:lice_density_modelled ;
+    linkml:definition_uri saved:lice_density_collected ;
+    linkml:is_a saved:column_collected ;
+    linkml:range saved:float ;
+    linkml:slot_uri saved:lice_density_collected .
+
+saved:lice_density_modelled a saved:SlotDefinition ;
+    dcterms:description "Modelled lice density (lice per m³)" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/modelled/> ;
+    skos:narrowMatch saved:lice_density_collected ;
+    linkml:definition_uri saved:lice_density_modelled ;
+    linkml:is_a saved:column_modelled ;
+    linkml:range saved:float ;
+    linkml:slot_uri saved:lice_density_modelled .
+
+saved:local_version a saved:SlotDefinition ;
+    dcterms:description "Version number of local submission utility" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    skos:narrowMatch pav:version ;
+    linkml:definition_uri saved:local_version ;
+    linkml:domain_of saved:ManifestDesc ;
+    linkml:owner saved:ManifestDesc ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:local_version .
+
+saved:notes a saved:SlotDefinition ;
+    dcterms:description "Notes pertinent to observation, a set of observations, or a data-set" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
+    skos:narrowMatch saved:provenance ;
+    linkml:definition_uri saved:notes ;
+    linkml:is_a saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:notes .
+
+saved:provenance a saved:SlotDefinition ;
+    dcterms:description "Provenance of an element, or a set of elements. This is distinct from Dublin Core's notion of provenance, which concerns any changes in ownership/custody of the resource since its creation." ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/core/> ;
+    skos:narrowMatch saved:notes,
+        dcterms:provenance ;
+    linkml:definition_uri saved:provenance ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:provenance .
+
+saved:resource_hash a saved:SlotDefinition ;
+    dcterms:description "Checksum of resource" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:resource_hash ;
+    linkml:domain_of saved:TableDesc ;
+    linkml:is_a saved:hash ;
+    linkml:owner saved:TableDesc ;
+    linkml:range saved:string ;
+    linkml:required true ;
+    linkml:slot_uri saved:resource_hash .
+
+saved:resource_path a saved:SlotDefinition ;
+    dcterms:description "Path or URI of resource" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:resource_path ;
+    linkml:domain_of saved:TableDesc ;
+    linkml:is_a saved:path ;
+    linkml:owner saved:TableDesc ;
+    linkml:range saved:uri ;
+    linkml:required true ;
+    linkml:slot_uri saved:resource_path .
+
+saved:schema_path_ttl a saved:SlotDefinition ;
+    dcterms:description "Path of URI of schema associated with resource (RDF/TTL conversion of LinkML YAML)" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:schema_path_ttl ;
+    linkml:domain_of saved:TableDesc ;
+    linkml:is_a saved:path ;
+    linkml:owner saved:TableDesc ;
+    linkml:range saved:uri ;
+    linkml:slot_uri saved:schema_path_ttl .
+
+saved:schema_path_yaml a saved:SlotDefinition ;
+    dcterms:description "Path or URI of schema associated with resource (LinkML YAML)" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:schema_path_yaml ;
+    linkml:domain_of saved:TableDesc ;
+    linkml:is_a saved:path ;
+    linkml:owner saved:TableDesc ;
+    linkml:range saved:uri ;
+    linkml:required true ;
+    linkml:slot_uri saved:schema_path_yaml .
+
+saved:table a saved:SlotDefinition ;
+    dcterms:description "Table description from which column is drawn, specifically matching the `atomic_name' field of a given instance of a `TableDesc' class." ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:table ;
+    linkml:domain_of saved:ScopeDesc ;
+    linkml:owner saved:ScopeDesc ;
+    linkml:range saved:TableDesc ;
+    linkml:required true ;
+    linkml:slot_uri saved:table .
+
+saved:tables a saved:SlotDefinition ;
+    dcterms:description "Specification of mappings between resources and schemas, as well as columns or dimensions to bring into into scope" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:tables ;
+    linkml:domain_of saved:ManifestDesc ;
+    linkml:inlined true ;
+    linkml:inlined_as_list true ;
+    linkml:multivalued true ;
+    linkml:owner saved:ManifestDesc ;
+    linkml:range saved:TableDesc ;
+    linkml:required true ;
+    linkml:slot_uri saved:tables .
+
+saved:title a saved:SlotDefinition ;
+    dcterms:description "Concise human-readable name for the element" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/core/> ;
+    skos:mappingRelation dcterms:title ;
+    linkml:definition_uri saved:title ;
+    linkml:domain_of saved:JobDesc,
+        saved:TableDesc ;
+    linkml:owner saved:JobDesc ;
+    linkml:range saved:string ;
+    linkml:slot_uri dcterms:title .
+
+saved:variable a saved:SlotDefinition ;
+    dcterms:description "Name of variable underpinning column, specific to the job, used for pattern-matching" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:variable ;
+    linkml:domain_of saved:ScopeDesc ;
+    linkml:owner saved:ScopeDesc ;
+    linkml:range saved:ExtColumnDesc ;
+    linkml:required true ;
+    linkml:slot_uri saved:variable .
+
+saved:ExtColumnDesc a saved:ClassDefinition ;
+    dcterms:description "Catch-all external column description" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:class_uri saved:ExtColumnDesc ;
+    linkml:definition_uri saved:ExtColumnDesc ;
+    linkml:slot_usage [ ] ;
+    linkml:slots saved:atomic_name .
+
+saved:column_modelled a saved:SlotDefinition ;
+    dcterms:description "Column describes modelled data" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/core/> ;
+    linkml:definition_uri saved:column_modelled ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:column_modelled .
+
+saved:integer a saved:TypeDefinition ;
+    saved:base "int" ;
+    saved:imported_from "linkml:types" ;
+    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"." ;
+    dcterms:description "An integer" ;
+    skos:exactMatch schema1:Integer ;
+    skos:inScheme linkml:types ;
+    linkml:definition_uri linkml:Integer ;
+    linkml:uri xsd:integer .
+
+saved:uri a saved:TypeDefinition ;
     saved:base "URI" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"." ;
@@ -273,483 +743,50 @@
     linkml:definition_uri linkml:Uri ;
     linkml:uri xsd:anyURI .
 
-<http://marine.gov.scot/metadata/saved/schema/cage_id> a saved:SlotDefinition ;
-    dcterms:description "Semi-numeric cage identifier, related to station/site" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:any_of [ a saved:AnonymousSlotExpression ;
-            linkml:range <http://marine.gov.scot/metadata/saved/schema/integer> ],
-        [ a saved:AnonymousSlotExpression ;
-            linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ] ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/cage_id> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/cage_id> .
-
-<http://marine.gov.scot/metadata/saved/schema/depth> a saved:SlotDefinition ;
-    dcterms:description "Depth in metres" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/depth> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/depth> .
-
-<http://marine.gov.scot/metadata/saved/schema/description> a saved:SlotDefinition ;
-    dcterms:description "Human-readable description of the element" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/core/> ;
-    skos:mappingRelation dcterms:description ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/description> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri dcterms:description .
-
-<http://marine.gov.scot/metadata/saved/schema/easting> a saved:SlotDefinition ;
-    dcterms:description "'Y'-positional data relative to point of origin" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/easting> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/integer> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/easting> .
-
-<http://marine.gov.scot/metadata/saved/schema/fish_length> a saved:SlotDefinition ;
-    dcterms:description "Length of fish expressed (mm)" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/collected/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/fish_length> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_collected> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/fish_length> .
-
-<http://marine.gov.scot/metadata/saved/schema/fish_mass> a saved:SlotDefinition ;
-    dcterms:description "Weight of fish expressed (g)" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/collected/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/fish_mass> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_collected> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/fish_mass> .
-
-<http://marine.gov.scot/metadata/saved/schema/global_coordinate_system> a saved:SlotDefinition ;
-    dcterms:description "Global coordinate system (GCS) reference point of origin" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/global_coordinate_system> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/global_coordinate_system> .
-
-<http://marine.gov.scot/metadata/saved/schema/latitude> a saved:SlotDefinition ;
-    dcterms:description "Latitude" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:any_of [ a saved:AnonymousSlotExpression ;
-            linkml:range <http://marine.gov.scot/metadata/saved/schema/LatLonType> ],
-        [ a saved:AnonymousSlotExpression ;
-            linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ] ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/latitude> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/latitude> .
-
-<http://marine.gov.scot/metadata/saved/schema/lice_af_average> a saved:SlotDefinition ;
-    dcterms:description "Average number of Salmon lice (adult female) per fish" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/collected/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/lice_af_average> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_collected> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/lice_af_average> .
-
-<http://marine.gov.scot/metadata/saved/schema/lice_af_total> a saved:SlotDefinition ;
-    dcterms:description "Total number of Salmon lice per fish" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/collected/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/lice_af_total> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_collected> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/integer> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/lice_af_total> .
-
-<http://marine.gov.scot/metadata/saved/schema/longitude> a saved:SlotDefinition ;
-    dcterms:description "Longitude" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:any_of [ a saved:AnonymousSlotExpression ;
-            linkml:range <http://marine.gov.scot/metadata/saved/schema/LatLonType> ],
-        [ a saved:AnonymousSlotExpression ;
-            linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ] ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/longitude> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/longitude> .
-
-<http://marine.gov.scot/metadata/saved/schema/national_grid_reference> a saved:SlotDefinition ;
-    dcterms:description "National grid reference (NGR) point of origin" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/national_grid_reference> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/national_grid_reference> .
-
-<http://marine.gov.scot/metadata/saved/schema/northing> a saved:SlotDefinition ;
-    dcterms:description "'X'-positional data relative to point of origin" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/northing> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/integer> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/northing> .
-
-<http://marine.gov.scot/metadata/saved/schema/series> a saved:SlotDefinition ;
-    dcterms:description "Data series to which a given observation belongs" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/series> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/series> .
-
-<http://marine.gov.scot/metadata/saved/schema/site_id> a saved:SlotDefinition ;
-    dcterms:description "Fish farm station/site global ID" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/site_id> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/site_id> .
-
-<http://marine.gov.scot/metadata/saved/schema/site_name> a saved:SlotDefinition ;
-    dcterms:description "Fish farm station/site local name" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/site_name> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/site_name> .
-
-<http://marine.gov.scot/metadata/saved/schema/type> a saved:SlotDefinition ;
-    dcterms:description "Nature or genre of the element" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/core/> ;
-    skos:mappingRelation dcterms:type ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/type> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri dcterms:type .
-
-<http://marine.gov.scot/metadata/saved/schema/LatLonType> a saved:TypeDefinition ;
-    saved:base "str" ;
-    saved:pattern "[0-9]+o [0-9]+.[0-9]+[N|W]" ;
-    saved:repr "str" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/types/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/LatLonType> ;
-    linkml:uri <http://marine.gov.scot/metadata/saved/schema/LatLon> .
-
-<http://marine.gov.scot/metadata/saved/schema/column> a saved:SlotDefinition ;
-    dcterms:description "Column name in table" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/column> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/column> .
-
-<http://marine.gov.scot/metadata/saved/schema/count_fish_collected> a saved:SlotDefinition ;
-    dcterms:description "Sampled number of fish in the farm" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/collected/> ;
-    skos:narrowMatch <http://marine.gov.scot/metadata/saved/schema/count_fish_interpolated> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/count_fish_collected> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_collected> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/count_fish_collected> .
-
-<http://marine.gov.scot/metadata/saved/schema/count_fish_interpolated> a saved:SlotDefinition ;
-    dcterms:description "Interpolated number of fish in the farm" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/modelled/> ;
-    skos:narrowMatch <http://marine.gov.scot/metadata/saved/schema/count_fish_collected> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/count_fish_interpolated> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_modelled> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/count_fish_interpolated> .
-
-<http://marine.gov.scot/metadata/saved/schema/fish_species_common> a saved:SlotDefinition ;
-    dcterms:description "Common name of species sampled" ;
-    skos:broadMatch <http://marine.gov.scot/metadata/saved/schema/fish_species_scientific> ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/collected/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/fish_species_common> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_collected> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/fish_species_common> .
-
-<http://marine.gov.scot/metadata/saved/schema/fish_species_scientific> a saved:SlotDefinition ;
-    dcterms:description "Scientific name of species sampled" ;
-    skos:broadMatch <http://marine.gov.scot/metadata/saved/schema/fish_species_common> ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/collected/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/fish_species_scientific> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_collected> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/fish_species_scientific> .
-
-<http://marine.gov.scot/metadata/saved/schema/gcp_source> a saved:SlotDefinition ;
-    dcterms:description "GCP account of the generator of the manifest" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/gcp_source> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/gcp_source> .
-
-<http://marine.gov.scot/metadata/saved/schema/hash> a saved:SlotDefinition ;
-    dcterms:description "Checksum of some file" ;
-    skos:exactMatch linkml:hash ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/hash> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/hash> .
-
-<http://marine.gov.scot/metadata/saved/schema/job_scope_collected> a saved:SlotDefinition ;
-    dcterms:description "A collection of column descriptions which are collected or sampled" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/job_scope_collected> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:inlined true ;
-    linkml:inlined_as_list true ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/job_scope> ;
-    linkml:multivalued true ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/job_scope_collected> .
-
-<http://marine.gov.scot/metadata/saved/schema/job_scope_descriptive> a saved:SlotDefinition ;
-    dcterms:description "A collection of column descriptions which describe something about the world" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/job_scope_descriptive> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:inlined true ;
-    linkml:inlined_as_list true ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/job_scope> ;
-    linkml:multivalued true ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/job_scope_descriptive> .
-
-<http://marine.gov.scot/metadata/saved/schema/job_scope_modelled> a saved:SlotDefinition ;
-    dcterms:description "A collection of column descriptions which are modelled or simulated" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/job_scope_modelled> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:inlined true ;
-    linkml:inlined_as_list true ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/job_scope> ;
-    linkml:multivalued true ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/job_scope_modelled> .
-
-<http://marine.gov.scot/metadata/saved/schema/job_type> a saved:SlotDefinition ;
-    dcterms:description "While this is analogous to Dublin Core's notion of type, it is specific to jobs proper, because there is a well-defined range of the jobs we know about. Undefined job types cannot be processed." ;
-    skos:broadMatch <http://marine.gov.scot/metadata/saved/schema/type> ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/job_type> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/uriorcurie> ;
-    linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/job_type> .
-
-<http://marine.gov.scot/metadata/saved/schema/jobs> a saved:SlotDefinition ;
-    dcterms:description "Specification of operations to run on resources and schemas provided" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/jobs> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
+saved:job_scope a saved:SlotDefinition ;
+    dcterms:description "A collection of column descriptions" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:job_scope ;
     linkml:inlined true ;
     linkml:inlined_as_list true ;
     linkml:multivalued true ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/jobs> .
+    linkml:range saved:ScopeDesc ;
+    linkml:slot_uri saved:job_scope .
 
-<http://marine.gov.scot/metadata/saved/schema/lice_density_collected> a saved:SlotDefinition ;
-    dcterms:description "Sampled lice density (lice per m³)" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/collected/> ;
-    skos:narrowMatch <http://marine.gov.scot/metadata/saved/schema/lice_density_modelled> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/lice_density_collected> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_collected> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/lice_density_collected> .
-
-<http://marine.gov.scot/metadata/saved/schema/lice_density_modelled> a saved:SlotDefinition ;
-    dcterms:description "Modelled lice density (lice per m³)" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/modelled/> ;
-    skos:narrowMatch <http://marine.gov.scot/metadata/saved/schema/lice_density_collected> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/lice_density_modelled> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_modelled> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/float> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/lice_density_modelled> .
-
-<http://marine.gov.scot/metadata/saved/schema/local_version> a saved:SlotDefinition ;
-    dcterms:description "Version number of local submission utility" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    skos:narrowMatch pav:version ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/local_version> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/local_version> .
-
-<http://marine.gov.scot/metadata/saved/schema/notes> a saved:SlotDefinition ;
-    dcterms:description "Notes pertinent to observation, a set of observations, or a data-set" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/descriptive/> ;
-    skos:narrowMatch <http://marine.gov.scot/metadata/saved/schema/provenance> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/notes> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/notes> .
-
-<http://marine.gov.scot/metadata/saved/schema/provenance> a saved:SlotDefinition ;
-    dcterms:description "Provenance of an element, or a set of elements. This is distinct from Dublin Core's notion of provenance, which concerns any changes in ownership/custody of the resource since its creation." ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/core/> ;
-    skos:narrowMatch <http://marine.gov.scot/metadata/saved/schema/notes>,
-        dcterms:provenance ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/provenance> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/provenance> .
-
-<http://marine.gov.scot/metadata/saved/schema/resource_hash> a saved:SlotDefinition ;
-    dcterms:description "Checksum of resource" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/resource_hash> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/hash> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/resource_hash> .
-
-<http://marine.gov.scot/metadata/saved/schema/resource_path> a saved:SlotDefinition ;
-    dcterms:description "Path or URI of resource" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/resource_path> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/path> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/uriorcurie> ;
-    linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/resource_path> .
-
-<http://marine.gov.scot/metadata/saved/schema/schema_path> a saved:SlotDefinition ;
-    dcterms:description "Path or URI of schema associated with resource" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/schema_path> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:is_a <http://marine.gov.scot/metadata/saved/schema/path> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/uriorcurie> ;
-    linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/schema_path> .
-
-<http://marine.gov.scot/metadata/saved/schema/table> a saved:SlotDefinition ;
-    dcterms:description "Table description from which column is drawn, specifically matching the `atomic_name' field of a given instance of a `TableDesc' class." ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/table> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/uriorcurie> ;
-    linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/table> .
-
-<http://marine.gov.scot/metadata/saved/schema/tables> a saved:SlotDefinition ;
-    dcterms:description "Specification of mappings between resources and schemas, as well as columns or dimensions to bring into into scope" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/tables> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
-    linkml:inlined true ;
-    linkml:inlined_as_list true ;
-    linkml:multivalued true ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/tables> .
-
-<http://marine.gov.scot/metadata/saved/schema/title> a saved:SlotDefinition ;
-    dcterms:description "Concise human-readable name for the element" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/core/> ;
-    skos:mappingRelation dcterms:title ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/title> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/JobDesc>,
-        <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri dcterms:title .
-
-<http://marine.gov.scot/metadata/saved/schema/variable> a saved:SlotDefinition ;
-    dcterms:description "Name of variable underpinning column, specific to the job" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/variable> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/uriorcurie> ;
-    linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/variable> .
-
-<http://marine.gov.scot/metadata/saved/schema/column_modelled> a saved:SlotDefinition ;
-    dcterms:description "Column describes modelled data" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/core/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/column_modelled> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/column_modelled> .
-
-<http://marine.gov.scot/metadata/saved/schema/integer> a saved:TypeDefinition ;
-    saved:base "int" ;
-    saved:imported_from "linkml:types" ;
-    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"." ;
-    dcterms:description "An integer" ;
-    skos:exactMatch schema1:Integer ;
-    skos:inScheme linkml:types ;
-    linkml:definition_uri linkml:Integer ;
-    linkml:uri xsd:integer .
-
-<http://marine.gov.scot/metadata/saved/schema/path> a saved:SlotDefinition ;
+saved:path a saved:SlotDefinition ;
     dcterms:description "Path or URI" ;
     skos:exactMatch linkml:path ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/path> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/uriorcurie> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/path> .
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:path ;
+    linkml:range saved:uri ;
+    linkml:slot_uri saved:path .
 
-<http://marine.gov.scot/metadata/saved/schema/atomic_name> a saved:SlotDefinition ;
+saved:atomic_name a saved:SlotDefinition ;
     saved:pattern "^:?[a-z]+[[a-z]|_|]*$" ;
     dcterms:description "Short-form name / atom: lower-case, no special characters excepting underscores" ;
-    skos:broadMatch <http://marine.gov.scot/metadata/saved/schema/name>,
+    skos:broadMatch saved:name,
         dc:title ;
     skos:exactMatch dc:identifier ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/atomic_name> ;
-    linkml:domain_of <http://marine.gov.scot/metadata/saved/schema/JobDesc>,
-        <http://marine.gov.scot/metadata/saved/schema/ManifestDesc>,
-        <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:definition_uri saved:atomic_name ;
+    linkml:domain_of saved:ExtColumnDesc,
+        saved:JobDesc,
+        saved:ManifestDesc,
+        saved:TableDesc ;
     linkml:identifier true ;
-    linkml:owner <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
+    linkml:owner saved:ManifestDesc ;
+    linkml:range saved:string ;
     linkml:required true ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/atomic_name> .
+    linkml:slot_uri saved:atomic_name .
 
-<http://marine.gov.scot/metadata/saved/schema/job_scope> a saved:SlotDefinition ;
-    dcterms:description "A collection of column descriptions" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/job_scope> ;
-    linkml:inlined true ;
-    linkml:inlined_as_list true ;
-    linkml:multivalued true ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/job_scope> .
-
-<http://marine.gov.scot/metadata/saved/schema/uriorcurie> a saved:TypeDefinition ;
-    saved:base "URIorCURIE" ;
-    saved:imported_from "linkml:types" ;
-    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"." ;
-    saved:repr "str" ;
-    dcterms:description "a URI or a CURIE" ;
-    skos:inScheme linkml:types ;
-    linkml:definition_uri linkml:Uriorcurie ;
-    linkml:uri xsd:anyURI .
-
-<http://marine.gov.scot/metadata/saved/schema/column_collected> a saved:SlotDefinition ;
+saved:column_collected a saved:SlotDefinition ;
     dcterms:description "Column describes collected data" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/core/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/column_collected> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/column_collected> .
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/core/> ;
+    linkml:definition_uri saved:column_collected ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:column_collected .
 
-<http://marine.gov.scot/metadata/saved/schema/float> a saved:TypeDefinition ;
+saved:float a saved:TypeDefinition ;
     saved:base "float" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"." ;
@@ -759,66 +796,63 @@
     linkml:definition_uri linkml:Float ;
     linkml:uri xsd:float .
 
-<http://marine.gov.scot/metadata/saved/schema/ColumnDesc> a saved:ClassDefinition ;
-    dcterms:description """Job manifest: column scope description and annotations
-This has three elements:
-  1. The column name
-  2. The table from which the column is or columns are drawn
-  3. The variable underpinning the column, which is specific to the job.""" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:class_uri <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/ColumnDesc> ;
+saved:ManifestDesc a saved:ClassDefinition ;
+    dcterms:description "Manifest: job invocation specification" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:class_uri saved:ManifestDesc ;
+    linkml:definition_uri saved:ManifestDesc ;
     linkml:slot_usage [ ] ;
-    linkml:slots <http://marine.gov.scot/metadata/saved/schema/column>,
-        <http://marine.gov.scot/metadata/saved/schema/table>,
-        <http://marine.gov.scot/metadata/saved/schema/variable> .
+    linkml:slots saved:atomic_name,
+        saved:gcp_source,
+        saved:jobs,
+        saved:local_version,
+        saved:tables .
 
-<http://marine.gov.scot/metadata/saved/schema/ManifestDesc> a saved:ClassDefinition ;
-    dcterms:description "Job manifest: complete specification" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:class_uri <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/ManifestDesc> ;
+saved:ScopeDesc a saved:ClassDefinition ;
+    dcterms:description "Manifest: column scope description and attributes including variable underpinning the column" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:class_uri saved:ScopeDesc ;
+    linkml:definition_uri saved:ScopeDesc ;
     linkml:slot_usage [ ] ;
-    linkml:slots <http://marine.gov.scot/metadata/saved/schema/atomic_name>,
-        <http://marine.gov.scot/metadata/saved/schema/gcp_source>,
-        <http://marine.gov.scot/metadata/saved/schema/jobs>,
-        <http://marine.gov.scot/metadata/saved/schema/local_version>,
-        <http://marine.gov.scot/metadata/saved/schema/tables> .
+    linkml:slots saved:column,
+        saved:table,
+        saved:variable .
 
-<http://marine.gov.scot/metadata/saved/schema/TableDesc> a saved:ClassDefinition ;
-    dcterms:description "Job manifest: data source descriptive attributes" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:class_uri <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/TableDesc> ;
+saved:JobDesc a saved:ClassDefinition ;
+    dcterms:description "Manifest: job specification attributes which specific job sub-classes inherit" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:class_uri saved:JobDesc ;
+    linkml:definition_uri saved:JobDesc ;
     linkml:slot_usage [ ] ;
-    linkml:slots <http://marine.gov.scot/metadata/saved/schema/atomic_name>,
-        <http://marine.gov.scot/metadata/saved/schema/description>,
-        <http://marine.gov.scot/metadata/saved/schema/resource_hash>,
-        <http://marine.gov.scot/metadata/saved/schema/resource_path>,
-        <http://marine.gov.scot/metadata/saved/schema/schema_path>,
-        <http://marine.gov.scot/metadata/saved/schema/title> .
+    linkml:slots saved:atomic_name,
+        saved:job_scope_collected,
+        saved:job_scope_descriptive,
+        saved:job_scope_modelled,
+        saved:job_type,
+        saved:title .
 
-<http://marine.gov.scot/metadata/saved/schema/JobDesc> a saved:ClassDefinition ;
-    dcterms:description "Job manifest: job specification attributes which specific job sub-classes inherit" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/job/> ;
-    linkml:class_uri <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/JobDesc> ;
-    linkml:slot_usage [ ] ;
-    linkml:slots <http://marine.gov.scot/metadata/saved/schema/atomic_name>,
-        <http://marine.gov.scot/metadata/saved/schema/job_scope_collected>,
-        <http://marine.gov.scot/metadata/saved/schema/job_scope_descriptive>,
-        <http://marine.gov.scot/metadata/saved/schema/job_scope_modelled>,
-        <http://marine.gov.scot/metadata/saved/schema/job_type>,
-        <http://marine.gov.scot/metadata/saved/schema/title> .
-
-<http://marine.gov.scot/metadata/saved/schema/column_descriptive> a saved:SlotDefinition ;
+saved:column_descriptive a saved:SlotDefinition ;
     dcterms:description "Column describes data about the world" ;
-    skos:inScheme <http://marine.gov.scot/metadata/saved/schema/core/> ;
-    linkml:definition_uri <http://marine.gov.scot/metadata/saved/schema/column_descriptive> ;
-    linkml:range <http://marine.gov.scot/metadata/saved/schema/string> ;
-    linkml:slot_uri <http://marine.gov.scot/metadata/saved/schema/column_descriptive> .
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/core/> ;
+    linkml:definition_uri saved:column_descriptive ;
+    linkml:range saved:string ;
+    linkml:slot_uri saved:column_descriptive .
 
-<http://marine.gov.scot/metadata/saved/schema/string> a saved:TypeDefinition ;
+saved:TableDesc a saved:ClassDefinition ;
+    dcterms:description "Manifest: data source descriptive attributes" ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    linkml:class_uri saved:TableDesc ;
+    linkml:definition_uri saved:TableDesc ;
+    linkml:slot_usage [ ] ;
+    linkml:slots saved:atomic_name,
+        saved:description,
+        saved:resource_hash,
+        saved:resource_path,
+        saved:schema_path_ttl,
+        saved:schema_path_yaml,
+        saved:title .
+
+saved:string a saved:TypeDefinition ;
     saved:base "str" ;
     saved:imported_from "linkml:types" ;
     saved:notes "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"." ;

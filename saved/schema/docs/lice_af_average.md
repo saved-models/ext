@@ -4,7 +4,7 @@
 
 Average number of Salmon lice (adult female) per fish
 
-URI: [saved:lice_af_average](http://marine.gov.scot/metadata/saved/schema/lice_af_average)
+URI: [saved:lice_af_average](https://marine.gov.scot/metadata/saved/schema/lice_af_average)
 
 
 ## Domain and Range

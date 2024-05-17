@@ -1,20 +1,20 @@
-id: http://marine.gov.scot/metadata/saved/schema/meta/
+id: https://marine.gov.scot/metadata/saved/schema/meta/
 name: meta
 title: >-
   SAVED meta-model
 prefixes:
-  linkml: https://w3id.org/linkml/
-  rap:    http://marine.gov.scot/metadata/saved/rap/
-  saved:  http://marine.gov.scot/metadata/saved/schema/
-  job:    http://marine.gov.scot/metadata/saved/schema/job_
-  
+  dcterms: http://purl.org/dc/terms/
+  linkml:  https://w3id.org/linkml/
+  rap:     https://marine.gov.scot/metadata/saved/rap/
+  saved:   https://marine.gov.scot/metadata/saved/schema/
+  job:     https://marine.gov.scot/metadata/saved/schema/job_
 imports:
   - linkml:types
-  - ./core
-  - ./collected
-  - ./descriptive
-  - ./job
-  - ./modelled
+  - saved:core
+  - saved:collected
+  - saved:descriptive
+  - saved:job
+  - saved:modelled
 default_prefix: saved
 
 emit_prefixes:

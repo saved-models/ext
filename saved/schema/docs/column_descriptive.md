@@ -4,7 +4,7 @@
 
 Column describes data about the world
 
-URI: [saved:column_descriptive](http://marine.gov.scot/metadata/saved/schema/column_descriptive)
+URI: [saved:column_descriptive](https://marine.gov.scot/metadata/saved/schema/column_descriptive)
 
 
 ## Domain and Range

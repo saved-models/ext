@@ -4,7 +4,7 @@
 
 GCP account of the generator of the manifest
 
-URI: [saved:gcp_source](http://marine.gov.scot/metadata/saved/schema/gcp_source)
+URI: [saved:gcp_source](https://marine.gov.scot/metadata/saved/schema/gcp_source)
 
 
 ## Domain and Range

@@ -4,7 +4,7 @@
 
 'Y'-positional data relative to point of origin
 
-URI: [saved:easting](http://marine.gov.scot/metadata/saved/schema/easting)
+URI: [saved:easting](https://marine.gov.scot/metadata/saved/schema/easting)
 
 
 ## Domain and Range

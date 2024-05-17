@@ -4,7 +4,7 @@
 
 
 
-URI: [saved:LatLonType](http://marine.gov.scot/metadata/saved/schema/LatLonType)
+URI: [saved:LatLonType](https://marine.gov.scot/metadata/saved/schema/LatLonType)
 
 |  |  |  |
 | --- | --- | --- |

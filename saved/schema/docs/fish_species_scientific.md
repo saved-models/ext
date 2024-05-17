@@ -4,7 +4,7 @@
 
 Scientific name of species sampled
 
-URI: [saved:fish_species_scientific](http://marine.gov.scot/metadata/saved/schema/fish_species_scientific)
+URI: [saved:fish_species_scientific](https://marine.gov.scot/metadata/saved/schema/fish_species_scientific)
 
 
 ## Domain and Range

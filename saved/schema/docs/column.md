@@ -4,7 +4,7 @@
 
 Column name in table
 
-URI: [saved:column](http://marine.gov.scot/metadata/saved/schema/column)
+URI: [saved:column](https://marine.gov.scot/metadata/saved/schema/column)
 
 
 ## Domain and Range
@@ -19,4 +19,4 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 
 ## Used by
 
- * [ColumnDesc](ColumnDesc.md)
+ * [ScopeDesc](ScopeDesc.md)

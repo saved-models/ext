@@ -4,7 +4,7 @@
 
 Latitude
 
-URI: [saved:latitude](http://marine.gov.scot/metadata/saved/schema/latitude)
+URI: [saved:latitude](https://marine.gov.scot/metadata/saved/schema/latitude)
 
 
 ## Domain and Range

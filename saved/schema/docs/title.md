@@ -4,7 +4,7 @@
 
 Concise human-readable name for the element
 
-URI: [saved:title](http://marine.gov.scot/metadata/saved/schema/title)
+URI: [saved:title](https://marine.gov.scot/metadata/saved/schema/title)
 
 
 ## Domain and Range

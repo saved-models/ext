@@ -4,7 +4,7 @@
 
 Weight of fish expressed (g)
 
-URI: [saved:fish_mass](http://marine.gov.scot/metadata/saved/schema/fish_mass)
+URI: [saved:fish_mass](https://marine.gov.scot/metadata/saved/schema/fish_mass)
 
 
 ## Domain and Range

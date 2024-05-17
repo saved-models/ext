@@ -4,12 +4,12 @@
 
 A collection of column descriptions which are modelled or simulated
 
-URI: [saved:job_scope_modelled](http://marine.gov.scot/metadata/saved/schema/job_scope_modelled)
+URI: [saved:job_scope_modelled](https://marine.gov.scot/metadata/saved/schema/job_scope_modelled)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..\*</sub> [ColumnDesc](ColumnDesc.md)
+None &#8594;  <sub>0..\*</sub> [ScopeDesc](ScopeDesc.md)
 
 ## Parents
 

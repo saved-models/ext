@@ -4,7 +4,7 @@
 
 Column describes modelled data
 
-URI: [saved:column_modelled](http://marine.gov.scot/metadata/saved/schema/column_modelled)
+URI: [saved:column_modelled](https://marine.gov.scot/metadata/saved/schema/column_modelled)
 
 
 ## Domain and Range

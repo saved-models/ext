@@ -4,7 +4,7 @@
 
 Short-form name / atom: lower-case, no special characters excepting underscores
 
-URI: [saved:atomic_name](http://marine.gov.scot/metadata/saved/schema/atomic_name)
+URI: [saved:atomic_name](https://marine.gov.scot/metadata/saved/schema/atomic_name)
 
 
 ## Domain and Range
@@ -19,6 +19,7 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 
 ## Used by
 
+ * [ExtColumnDesc](ExtColumnDesc.md)
  * [JobDesc](JobDesc.md)
  * [ManifestDesc](ManifestDesc.md)
  * [TableDesc](TableDesc.md)

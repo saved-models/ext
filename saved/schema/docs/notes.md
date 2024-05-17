@@ -4,7 +4,7 @@
 
 Notes pertinent to observation, a set of observations, or a data-set
 
-URI: [saved:notes](http://marine.gov.scot/metadata/saved/schema/notes)
+URI: [saved:notes](https://marine.gov.scot/metadata/saved/schema/notes)
 
 
 ## Domain and Range

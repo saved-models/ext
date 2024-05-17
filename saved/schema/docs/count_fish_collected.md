@@ -4,7 +4,7 @@
 
 Sampled number of fish in the farm
 
-URI: [saved:count_fish_collected](http://marine.gov.scot/metadata/saved/schema/count_fish_collected)
+URI: [saved:count_fish_collected](https://marine.gov.scot/metadata/saved/schema/count_fish_collected)
 
 
 ## Domain and Range

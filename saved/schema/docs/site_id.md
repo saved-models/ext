@@ -1,7 +1,6 @@
 
 # Slot: site_id
 
-
 Fish farm station/site global ID
 
 URI: [saved:site_id](https://marine.gov.scot/metadata/saved/schema/site_id)

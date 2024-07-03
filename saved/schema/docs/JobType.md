@@ -3,14 +3,8 @@
 
 
 
-
 URI: [saved:JobType](https://marine.gov.scot/metadata/saved/schema/JobType)
 
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
 
 ## Permissible Values
 

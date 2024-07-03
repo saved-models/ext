@@ -1,7 +1,6 @@
 
 # Slot: job_scope_descriptive
 
-
 A collection of column descriptions which describe something about the world
 
 URI: [saved:job_scope_descriptive](https://marine.gov.scot/metadata/saved/schema/job_scope_descriptive)

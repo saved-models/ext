@@ -1,7 +1,6 @@
 
 # Slot: schema_path_ttl
 
-
 Path of URI of schema associated with resource (RDF/TTL conversion of LinkML YAML)
 
 URI: [saved:schema_path_ttl](https://marine.gov.scot/metadata/saved/schema/schema_path_ttl)

@@ -1,7 +1,6 @@
 
 # Slot: fish_species_common
 
-
 Common name of species sampled
 
 URI: [saved:fish_species_common](https://marine.gov.scot/metadata/saved/schema/fish_species_common)
@@ -26,4 +25,3 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Broad Mappings:** | | saved:fish_species_scientific |
-

@@ -1,7 +1,6 @@
 
 # Slot: series
 
-
 Data series to which a given observation belongs
 
 URI: [saved:series](https://marine.gov.scot/metadata/saved/schema/series)

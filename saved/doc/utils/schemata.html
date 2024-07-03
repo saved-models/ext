@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.52">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>schemata – SAVED project documentation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../doc/utils/manifest.html" rel="next">
+<link href="../../doc/utils/index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": true,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="../../assets/fira.css" type="text/css">
+<meta name="quarto:status" content="draft">
+
+
+<meta property="og:title" content="SAVED project documentation">
+<meta property="og:site_name" content="SAVED project documentation">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-project-documentation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Project documentation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-project-documentation">    
+        <li>
+    <a class="dropdown-item" href="../../doc/misc/outline.html">
+ <span class="dropdown-text">Project outline</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../doc/utils/index.html">
+ <span class="dropdown-text">Fish data utilities</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../schema/index.html"> 
+<span class="menu-text">Data model / ontology</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../doc/utils/index.html">Fish data utilities</a></li><li class="breadcrumb-item"><a href="../../doc/utils/schemata.html">YAML schema writing</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../doc/misc/outline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project outline</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Fish data utilities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../doc/utils/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fish data utilities overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../doc/utils/schemata.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">YAML schema writing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../doc/utils/manifest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The manifest</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../doc/utils/debugging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Debugging and troubleshooting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#yaml-schema-writing" id="toc-yaml-schema-writing" class="nav-link active" data-scroll-target="#yaml-schema-writing">YAML schema writing</a>
+  <ul class="collapse">
+  <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline">Outline</a></li>
+  <li><a href="#yaml-syntax" id="toc-yaml-syntax" class="nav-link" data-scroll-target="#yaml-syntax">YAML syntax</a></li>
+  <li><a href="#metadata-about-the-schema-file" id="toc-metadata-about-the-schema-file" class="nav-link" data-scroll-target="#metadata-about-the-schema-file">Metadata about the schema file</a>
+  <ul class="collapse">
+  <li><a href="#the-id-name-title-and-description-fields" id="toc-the-id-name-title-and-description-fields" class="nav-link" data-scroll-target="#the-id-name-title-and-description-fields">The <code>id</code>, <code>name</code>, <code>title</code> and <code>description</code> fields</a></li>
+  <li><a href="#prefixes-and-imports" id="toc-prefixes-and-imports" class="nav-link" data-scroll-target="#prefixes-and-imports">Prefixes and imports</a></li>
+  </ul></li>
+  <li><a href="#describing-data-files" id="toc-describing-data-files" class="nav-link" data-scroll-target="#describing-data-files">Describing data files</a>
+  <ul class="collapse">
+  <li><a href="#classes-slots-and-types" id="toc-classes-slots-and-types" class="nav-link" data-scroll-target="#classes-slots-and-types">Classes, slots, and types</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/saved-models/data-model/issues/new/choose" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="yaml-schema-writing" class="level1">
+<h1>YAML schema writing</h1>
+<section id="outline" class="level2">
+<h2 class="anchored" data-anchor-id="outline">Outline</h2>
+<p>Each data file has a schema, which we use both to validate and describe data. The <a href="https://marine.gov.scot/metadata/saved/schema/">SAVED data model/ontology</a> is based on <a href="https://linkml.io/linkml/">LinkML</a>, with schema files authored in the YAML format. It is useful to think about these files as being made up of two main elements:</p>
+<ol type="1">
+<li>Metadata about the schema file. These declare certain fields essential for validation of the schema (e.g.&nbsp;a unique identifier and name for the schema), as well as extra, optional data such as its license, or when it was last updated.</li>
+<li>Fields which describe the structure of data files to be validated against the schema. These associate the names columns with a description, a data type (e.g.&nbsp;text field, or number), a provenance (e.g.&nbsp;modelled, or simulated), and with a variable described in the data model (e.g.&nbsp;<a href="https://marine.gov.scot/metadata/saved/schema/lice_af_total/"><code>saved:lice_af_total</code></a>).</li>
+</ol>
+<p>Top-level fields of a typical schema are summarised as follows, including what is strictly necessary for a schema file to be valid a LinkML schema file, what is necessary for validation, as well as a few other fields which you may want to include. This summary is not exhaustive, in fact, any fields in the LinkML model should be valid. The example schema files included with the fish data utilities were originally devised based on the JSON/CSVW schema files which we were writing before, as well as from following <a href="https://linkml.io/linkml/intro/tutorial.html">the LinkML tutorial</a>. You can choose to enrich your schema file with additional fields beyond what is needed just for validation, then.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 42%">
+<col style="width: 7%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Description</th>
+<th>Do I need this?</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>id</code></td>
+<td>Fully unique resource identifier: a URI</td>
+<td>Yes</td>
+<td><code>id: https://marine.gov.scot/metadata/saved/rap/sentinel_cages_sampling</code></td>
+</tr>
+<tr class="even">
+<td><code>name</code></td>
+<td>Name of the resource, an ‘atom’ (text field with no spaces, only underscores)</td>
+<td>Yes</td>
+<td><code>name: sentinel_cages_sampling</code></td>
+</tr>
+<tr class="odd">
+<td><code>title</code></td>
+<td>Longer title of the schema: this may be free text</td>
+<td>Yes</td>
+<td><code>title: Sentinel cages sampling information schema</code></td>
+</tr>
+<tr class="even">
+<td><code>description</code></td>
+<td>Long-form free text description of the schema</td>
+<td>No</td>
+<td><code>description: This is the example schema for sentinel cages sampling…</code></td>
+</tr>
+<tr class="odd">
+<td><code>prefixes</code></td>
+<td>List of mappings between an ‘atom’ and URI prefix which may be prefixed to identifiers</td>
+<td>Yes</td>
+<td>See note</td>
+</tr>
+<tr class="even">
+<td><code>imports</code></td>
+<td>Import of slots/types/classes from other LinkML schema resources</td>
+<td>Yes</td>
+<td>See note</td>
+</tr>
+<tr class="odd">
+<td><code>default_prefix</code></td>
+<td>Default prefix declaring URI to map to identifiers in the schema</td>
+<td>Yes</td>
+<td><code>default_prefix: mssamp</code></td>
+</tr>
+<tr class="even">
+<td><code>license</code></td>
+<td>URI/identifier of license associated with schema file</td>
+<td>No</td>
+<td><code>license: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/</code></td>
+</tr>
+<tr class="odd">
+<td><code>keywords</code></td>
+<td>List of keywords associated with schema, each list item may be free text</td>
+<td>No</td>
+<td>See note</td>
+</tr>
+<tr class="even">
+<td><code>created_by</code></td>
+<td>‘Atom’ indicating original creator of schema</td>
+<td>No</td>
+<td><code>created_by: marinescot</code></td>
+</tr>
+<tr class="odd">
+<td><code>modified_by</code></td>
+<td>‘Atom’ indicating who last modified schema</td>
+<td>No</td>
+<td><code>modified_by: saved</code></td>
+</tr>
+<tr class="even">
+<td><code>last_updated_on</code></td>
+<td>Time-stamp (ISO8601 <code>YYYY-MM-DD</code> format) indicating last update</td>
+<td>No</td>
+<td><code>last_updated_on: "2024-04-26"</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="yaml-syntax" class="level2">
+<h2 class="anchored" data-anchor-id="yaml-syntax">YAML syntax</h2>
+<p>YAML documents are made up of blocks, with indentation indicating membership of elements, and elements as mappings between ‘atoms’ and values. For example, in the LinkML schema, the slot for the <code>Sampling.Note</code> column is declared as follows:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slots</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">Sampling.Note</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Notes on issues with sampling"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">range</span><span class="kw">:</span><span class="at">       string</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at">    </span><span class="ch">false</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">exact_mappings</span><span class="kw">:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at">  saved:date</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Key things to keep in mind: 1. YAML is a machine-readable language, and indentation matters. In the above example, if <code>range</code> was indented two spaces fewer, it would not be considered to be part of the <code>Sampling.Note</code> block. 2. It is not necessary to quote the majority of text fields (even free text), except if the text includes control characters used by YAML, such as colons (which mark key/value pairs), dashes (which designate lists), or hashes (which designate comments). 3. If a text field is multi-line (sometimes useful for descriptions), you need to use <code>&gt;-</code> and indent the text in question below. The end of the indentation, here, rather than quotes, marks the end of the text field. 4. The order of fields does not strictly matter, but at least in terms of writing schema files for LinkML, it makes good sense to follow the split described above (metadata describing the schema; fields describing structure of data) and the order effectively described in this document, and indicated in the examples.</p>
+</section>
+<section id="metadata-about-the-schema-file" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-about-the-schema-file">Metadata about the schema file</h2>
+<section id="the-id-name-title-and-description-fields" class="level3">
+<h3 class="anchored" data-anchor-id="the-id-name-title-and-description-fields">The <code>id</code>, <code>name</code>, <code>title</code> and <code>description</code> fields</h3>
+<p>The exact distinction between these is not at first glance very clear. It can be summarised as follows:</p>
+<ol type="1">
+<li>The identifier (<code>id</code>) is a unique resource where the schema file may (perhaps should) live in the future. The examples use the “rap” directory under the SAVED prefix hosted on the Marine Scotland namespace. If you are not Marine Scotland, it is preferable to choose a URI which you control and could host something there. In any case, this field is necessary for a schema to be valid and to validate data files.</li>
+<li>The name field is the a unique name for the schema. This is an “atom” with no spaces, only underscores. It is likely easiest just to use the end of the identifier above, e.g.&nbsp;for the ID <code>https://marine.gov.scot/metadata/saved/rap/sentinel_cages_site</code>, one might choose the name <code>sentinel_cages_site</code>.</li>
+<li>The title of the resource is a free text field. Keep it relatively short as this will make the generated output (web pages) clearer.</li>
+<li>The description is a longer free text field. Whereas the identifier, name and title fields are mandatory, this description is not. This is the place to put longer descriptions of the data, rather than the title field, although they both allow free text.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">id</span><span class="kw">:</span><span class="at"> http://marine.gov.scot/metadata/saved/rap/sentinel_cages_site/</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at">  sentinel_cages_site</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Sentinel cages station information schema</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">: </span><span class="ch">&gt;-</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  This is an example for the purposes of testing fisdat(1) and fisup(1)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  This is a multi-line text field, the start of which is the `&gt;-' section,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  with the end indicated by change in indentation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="prefixes-and-imports" class="level3">
+<h3 class="anchored" data-anchor-id="prefixes-and-imports">Prefixes and imports</h3>
+<section id="prefixes" class="level4">
+<h4 class="anchored" data-anchor-id="prefixes">Prefixes</h4>
+<p>Prefixes are a collection of between an atom (text field with no spaces, only underscores) and a URI prefix. These mappings are prefixes because they are used to create unique identifiers from names, i.e.&nbsp;they prefix the name of a thing. Rather than type out the name of the URI every time, we use the short atom to refer to it.</p>
+<p>Consider the following set of prefixes:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prefixes</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">linkml</span><span class="kw">:</span><span class="at"> https://w3id.org/linkml/</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">saved</span><span class="kw">:</span><span class="at">  https://marine.gov.scot/metadata/saved/schema/</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">rap</span><span class="kw">:</span><span class="at">    https://marine.gov.scot/metadata/saved/rap/</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">mssite</span><span class="kw">:</span><span class="at"> https://marine.gov.scot/metadata/saved/rap/sentinel_cages_site/</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">mssamp</span><span class="kw">:</span><span class="at"> https://marine.gov.scot/metadata/saved/rap/sentinel_cages_sampling/</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">xsd</span><span class="kw">:</span><span class="at">    http://www.w3.org/2001/XMLSchema</span><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Identifiers are referenced using the form <code>&lt;atom&gt;:&lt;resource name&gt;</code>, and are expanded to <code>&lt;prefix URI&gt;&lt;resource name&gt;</code>. The last character of the prefix URI is important because the expansion does not assume anything about it, e.g.&nbsp;both the <a href="http://www.w3.org/2001/XMLSchema#"><code>xsd</code></a> (which ends in a hash) and the other prefixes are valid. The expansion is very simple. The identifier <a href="https://marine.gov.scot/metadata/saved/schema/lice_af_total/"><code>saved:lice_af_total</code></a> would expand to <code>https://marine.gov.scot/metadata/saved/schema/lice_af_total</code>.</p>
+</section>
+<section id="the-default-prefix" class="level4">
+<h4 class="anchored" data-anchor-id="the-default-prefix">The default prefix</h4>
+<p>The default prefix is a single reference to a prefix listed as above:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">default_prefix</span><span class="kw">:</span><span class="at"> mssamp</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Some things to keep in mind: - The purpose of the default prefix is to create unique identifiers for any element declared in the current schema file. However, it is possible that this prefix could be used across different schema files. Indeed, this is the approach taken for producing data models using LinkML schema files: they share a single prefix, and can import each other. - For example, in the <code>Sampling.Note</code> example above, other documents could refer to this identifier using the URI <code>https://marine.gov.scot/metadata/saved/rap/sentinel_cages_sampling/Sampling.Note</code> (expanded from <code>mssamp:Sampling.Note</code>). - Indeed, external schema files may also declare some prefix (it could be the same, <code>mssamp</code>; or e.g.&nbsp;<code>mssamp_alt</code>, as long as it maps to the same URI as <code>mssamp</code> does in this document), they could also refer to it using that prefix. - When declaring prefixes, although they are arbitrary, there tends to be conventions for certain well-known prefixes, a sample list of which is <a href="https://bioregistry.io/registry/">summarised here</a>.</p>
+<p>The basic idea here, then, is that we need to declare a default prefix which is unique to this document, to identify elements in this document, both internally and externally.</p>
+</section>
+<section id="compact-uris-curies" class="level4">
+<h4 class="anchored" data-anchor-id="compact-uris-curies">Compact URIs (CURIEs)</h4>
+<p>LinkML has a type called <a href="https://linkml.io/linkml-model/1.7.x/docs/Uriorcurie/"><code>UrioOrCurie</code></a>. This is either a full URI, or the compact equivalent. That is, the compact URI, or CURIE, is a succint way to refer to resources under the prefix in question, and it also allows us to name the prefix to some short-hand which describes its role.</p>
+<p>Consider the <code>saved</code> prefix above (which has a trailing slash). Given a URI, <a href="https://marine.gov.scot/metadata/saved/schema/lice_density_collected"><code>https://marine.gov.scot/metadata/saved/schema/lice_density_collected</code></a>, then, the compact URI equivalent is anything after the prefix, i.e.&nbsp;<code>saved:lice_density_collected</code>. A space on either side of the colon (e.g.&nbsp;<code>saved: lice_density_collected</code>) is not a valid CURIE, and would, at least in the YAML files, be considered to be part of the YAML syntax, which uses colons extensively.</p>
+<p>See the following page for a bit more information about the role of URIs and CURIEs: <a href="https://cthoyt.com/2021/09/14/curies.html">https://cthoyt.com/2021/09/14/curies.html</a></p>
+</section>
+<section id="imports" class="level4">
+<h4 class="anchored" data-anchor-id="imports">Imports</h4>
+<p>Imports are a link to an external LinkML schema, from which items declared in the schema are imported.</p>
+<p>Consider the following set of imports:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  linkml:types</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  linkml:datasets</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  saved:core</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">  saved:job</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There is an important distinction between referencing an identifier and importing it. For example, if <a href="https://marine.gov.scot/metadata/saved/schema/core.yaml"><code>saved:core</code></a> in the example above declared the type <a href="https://marine.gov.scot/metadata/saved/schema/LatLonType/"><code>saved:LatLonType</code></a>, to use this as a range proper, we would need to import <a href="https://marine.gov.scot/metadata/saved/schema/core.yaml"><code>saved:core</code></a> in the <code>imports</code> directive above. That is, <a href="https://marine.gov.scot/metadata/saved/schema/LatLonType/"><code>saved:LatLonType</code></a> is effectively just a URI (it expands to <code>https://marine.gov.scot/metadata/saved/schema/LatLonType</code>), and isn’t usable in a different LinkML schema file just by referencing it. Note that importing it would bring it into the top level, i.e.&nbsp;to use it as a range, we would simply use it as <code>LatLonRange</code>.</p>
+</section>
+<section id="the-relation-between-prefixes-and-imports-or-what-do-i-need-to-include" class="level4">
+<h4 class="anchored" data-anchor-id="the-relation-between-prefixes-and-imports-or-what-do-i-need-to-include">The relation between prefixes and imports, or, what do I need to include?</h4>
+<p>This hints at the importance of the prefixes and their relation to imports.</p>
+<ol type="1">
+<li>Any import must use both a valid prefix, and the resource in question must exist and be a valid LinkML schema file.</li>
+<li>To be a valid LinkML schema file, declare both the <a href="https://w3id.org/linkml/"><code>linkml</code></a> prefix and import <a href="https://w3id.org/linkml/types"><code>linkml:types</code></a></li>
+<li>Our schema files are based on <a href="https://marine.gov.scot/metadata/saved/schema/">our own data model/ontology</a>, so, always declare the <code>saved</code> prefix and import <a href="https://marine.gov.scot/metadata/saved/schema/core.yaml"><code>saved:core</code></a></li>
+<li>The schema file must declare a prefix unique to this document, to be set as the default prefix in the document.</li>
+<li>It is not necessary to import a schema file to reference anything related to the prefix, and in fact, this may cause problems. However, it is always necessary to add a prefix to the <code>prefixes</code> directive before referencing any identifier underneath it, as it will be impossible to expand the identifier into a URI.</li>
+</ol>
+</section>
+<section id="what-is-the-difference-between-our-data-modelontology-and-schema-files-for-data" class="level4">
+<h4 class="anchored" data-anchor-id="what-is-the-difference-between-our-data-modelontology-and-schema-files-for-data">What is the difference between our data model/ontology, and schema files for data?</h4>
+<p>You have probably noticed that both <a href="https://marine.gov.scot/metadata/saved/schema/">SAVED data model/ontology</a> and the schema files which we are writing are based on LinkML. This partly derives <a href="https://linkml.io/linkml/faq/general.html#is-linkml-just-for-metadata">from the design of LinkML itself</a>, which “doesn’t draw any hard and fast distinction between data and metadata, recognising that “metadata” is often defined in relative terms.”</p>
+<p>Here, it can be said that the <strong>schema</strong> files which we are writing describe data files, whereas the manifest files which the fish data utilities create are <strong>data</strong> files, which are (usually) in the YAML format.</p>
+<p>A further point which is relevant to this section is that there are circumstances in which YAML schema files will be valid, despite prefixes being used but not declared, whereas they may fail conversion due to this issue. Make sure that all identifiers referenced use a prefix which has been declared.</p>
+</section>
+</section>
+</section>
+<section id="describing-data-files" class="level2">
+<h2 class="anchored" data-anchor-id="describing-data-files">Describing data files</h2>
+<section id="classes-slots-and-types" class="level3">
+<h3 class="anchored" data-anchor-id="classes-slots-and-types">Classes, slots, and types</h3>
+<p>The LinkML has three related concepts: 1. Classes, which are effectively a way to describe <em>things</em> with attributes 2. Slots, which are attributes, and correspond closely to the columns in our data files 3. Types, which extend basic types (such as numbers or text strings)</p>
+<p>For validation, at minimum, <code>fisdat(1)</code> expects a couple of things: 1. Declaration of a simple class <code>TableSchema</code>, which is used by the programs to actually load the schema files 2. A set of slots referenced in the schema, corresponding to the columns of the data file in question, which are included as attributes of the <code>TableSchema</code> class</p>
+<p>The following is a shortened example <code>TableSchema</code> object from the sentinel cages (sampling information) example. We can think of <code>TableSchema</code> as a class which has column attributes.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slots</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">Cage.Number</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at">    A unique identifier for each cage which links back to station information. Not necessarily a number.</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">any_of</span><span class="kw">:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">range</span><span class="kw">:</span><span class="at">      integer</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">range</span><span class="kw">:</span><span class="at">      string</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">is_a</span><span class="kw">:</span><span class="at">           column_descriptive</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">exact_mappings</span><span class="kw">:</span><span class="at"> saved:cage_id</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">implements</span><span class="kw">:</span><span class="at">     linkml:elements</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at">       </span><span class="ch">true</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">Deployment.date</span><span class="kw">:</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at">    Date cage was stocked with fish</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">range</span><span class="kw">:</span><span class="at">          string</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">is_a</span><span class="kw">:</span><span class="at">           column_descriptive</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">exact_mappings</span><span class="kw">:</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> saved:date</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> saved:deployment_date</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">implements</span><span class="kw">:</span><span class="at">     linkml:elements</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at">       </span><span class="ch">true</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">Fish.Weight.g</span><span class="kw">:</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at">    Weight of fish expressed in grams</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">range</span><span class="kw">:</span><span class="at">          float</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">is_a</span><span class="kw">:</span><span class="at">           column_collected</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">exact_mappings</span><span class="kw">:</span><span class="at"> saved:fish_mass</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">implements</span><span class="kw">:</span><span class="at">     linkml:elements</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at">       </span><span class="ch">false</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">TOTAL</span><span class="kw">:</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">description</span><span class="kw">:</span><span class="at">    Total number of lice on the fish</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">range</span><span class="kw">:</span><span class="at">          integer</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">is_a</span><span class="kw">:</span><span class="at">           column_collected</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">exact_mappings</span><span class="kw">:</span><span class="at"> saved:lice_af_total</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">implements</span><span class="kw">:</span><span class="at">     linkml:elements</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">required</span><span class="kw">:</span><span class="at">       </span><span class="ch">false</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="fu">classes</span><span class="kw">:</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">TableSchema</span><span class="kw">:</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">implements</span><span class="kw">:</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> linkml:TwoDimensionalArray</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> linkml:ColumnOrderedArray</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slots</span><span class="kw">:</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> Deployment.date</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> Sampling.Note</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> Fish.Weight.g</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> TOTAL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Slots are declared in their own section at the top level of the YAML schema file, and then referenced in the table schema class object. This is because the LinkML schema files support a notion of slot <em>reuse</em>: by declaring them in this slots section, they are available to multiple classes in the same LinkML schema file (for instance, if we had another class, called <code>TableSchemaAlt</code>), as well as to other schema files (either a link to the URI of the slot object, or by importing the schema file to access its objects directly).</p>
+<p>For example, in this example schema, you will note that there is a slot not used in the <code>TableSchema</code> object (<code>Cage.Number</code>), and there is a slot referenced in the <code>TableSchema</code> object which is not declared in the <code>slots</code> section (<code>Sampling.Note</code>). The former is valid (the <code>Cage.Number</code> slot just won’t be included as an attribute of the <code>TableSchema</code> object), whereas the latter is invalid, because this slot does not (yet) exist.</p>
+<p>A typical slot declaration has the following properties: - The top-level <em>name</em> of the slot, for example <code>TOTAL</code>. For the purposes of validation, this should be the exact label used in the data file which is to be validated against this schema file. - <a href="https://linkml.io/linkml-model/1.7.x/docs/description/"><code>description</code></a>: Free text description of the column, while not required, strongly advisable to be included - <a href="https://linkml.io/linkml-model/1.7.x/docs/range/"><code>range</code></a>: The underlying data type of the column. Valid base types are <code>boolean</code>, <code>integer</code>, <code>float</code> (or <code>double</code>), or <code>string</code>. This can be inadequate when the column is a mixture of text and numeric data, e.g.&nbsp;consider the <code>Cage.Number</code> example. In these cases, specify <a href="https://linkml.io/linkml-model/1.7.x/docs/any_of/"><code>any_of</code></a> with a list of <code>range</code> directives, as in the <code>Cage.Number</code> example above. - <a href="https://linkml.io/linkml-model/1.7.x/docs/exact_mappings/"><code>exact_mappings</code></a>: Link/map columns to equivalents in the ontology/data model, or in other schema files. For example, the <code>TOTAL</code> column/slot above directly maps to values like <a href="https://marine.gov.scot/metadata/saved/schema/lice_af_total/"><code>saved:lice_af_total</code></a>. There are further notions of mappings, since there are a number of situations in which there isn’t an exact mapping: you can use <a href="https://linkml.io/linkml-model/1.7.x/docs/broad_mappings/"><code>broad_mappings</code></a>, <a href="https://linkml.io/linkml-model/1.7.x/docs/narrow_mappings/"><code>narrow_mappings</code></a>, <a href="https://linkml.io/linkml-model/1.7.x/docs/close_mappings/"><code>close_mappings</code></a> and <a href="https://linkml.io/linkml-model/1.7.x/docs/related_mappings/"><code>related_mappings</code></a> - <a href="https://linkml.io/linkml-model/1.7.x/docs/implements/"><code>implements</code></a>: External slot definition which the column slot implements. We are validating these with LinkML, so at least semantically, it is important to include <a href="https://linkml.io/linkml-model/1.7.x/docs/elements/"><code>linkml:elements</code></a> at minimum. If the slot implements any other slot definition, turn it into a list with <code>linkml:elements</code> and additional definitions as separate list elements. - <a href="https://linkml.io/linkml-model/1.7.x/docs/required/"><code>required</code></a>: Set as true/false depending on whether the data included have missing values. See the section “Dealing with missing data” in the troubleshooting/debugging section for more information on this and validation.</p>
+<p>Further note the inclusion of the <a href="https://linkml.io/linkml-model/1.7.x/docs/implements/"><code>implements</code></a> directive in the <code>TableSchema</code> class definition. Including this was based on LinkML’s <a href="https://linkml.io/linkml/howtos/multidimensional-arrays.html">documentation prior to version 1.7.0</a>. They have since added support for arrays, so including this is not strictly necessary, especially given the suggested class URIs do not actually resolve.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/marine\.gov\.scot\/metadata\/saved\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../doc/utils/index.html" class="pagination-link" aria-label="Fish data utilities overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fish data utilities overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../doc/utils/manifest.html" class="pagination-link" aria-label="The manifest">
+        <span class="nav-page-text">The manifest</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/saved-models/data-model/issues/new/choose" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

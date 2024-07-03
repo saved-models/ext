@@ -1,7 +1,6 @@
 
 # Class: ScopeDesc
 
-
 Manifest: column scope description and attributes including variable underpinning the column
 
 URI: [saved:ScopeDesc](https://marine.gov.scot/metadata/saved/schema/ScopeDesc)

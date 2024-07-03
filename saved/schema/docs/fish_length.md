@@ -1,7 +1,6 @@
 
 # Slot: fish_length
 
-
 Length of fish expressed (mm)
 
 URI: [saved:fish_length](https://marine.gov.scot/metadata/saved/schema/fish_length)

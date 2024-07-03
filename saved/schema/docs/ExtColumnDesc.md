@@ -1,7 +1,6 @@
 
 # Class: ExtColumnDesc
 
-
 Catch-all external column description
 
 URI: [saved:ExtColumnDesc](https://marine.gov.scot/metadata/saved/schema/ExtColumnDesc)

@@ -1,7 +1,6 @@
 
 # Slot: lice_af_total
 
-
 Total number of Salmon lice per fish
 
 URI: [saved:lice_af_total](https://marine.gov.scot/metadata/saved/schema/lice_af_total)

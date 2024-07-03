@@ -1,838 +1,940 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-        <link rel="canonical" href="http://marine.gov.scot/metadata/saved/schema/">
-      
-      
-        <link rel="prev" href=".">
-      
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
-    
-    
-      
-        <title>SAVED project schema</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.bcfcd587.min.css">
-      
-      
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.52">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
+<title>index – SAVED project documentation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
 
-    
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#saved-meta-model" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
 
-  
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": true,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="../assets/fira.css" type="text/css">
 
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="SAVED project schema" class="md-header__button md-logo" aria-label="SAVED project schema" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
+<meta property="og:title" content="SAVED project documentation">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="SAVED project documentation">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-project-documentation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Project documentation</span>
     </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            SAVED project schema
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Index
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-    
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-project-documentation">    
+        <li>
+    <a class="dropdown-item" href="../doc/misc/outline.html">
+ <span class="dropdown-text">Project outline</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../doc/utils/index.html">
+ <span class="dropdown-text">Fish data utilities</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="../schema/index.html" aria-current="page"> 
+<span class="menu-text">Data model / ontology</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
-    
-    
-      <div class="md-header__source">
-        <a href="https://github.com/saved-models/data-model" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-      </div>
-    
-  </nav>
-  
+      </div> <!-- /container-fluid -->
+    </nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="SAVED project schema" class="md-nav__button md-logo" aria-label="SAVED project schema" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    SAVED project schema
-  </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/saved-models/data-model" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="." class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Index
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Index
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Classes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
-    <span class="md-ellipsis">
-      Slots
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enumerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enumerations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Types
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subsets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Subsets
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#saved-meta-model" id="toc-saved-meta-model" class="nav-link active" data-scroll-target="#saved-meta-model">SAVED meta-model</a>
+  <ul class="collapse">
+  <li><a href="#classes" id="toc-classes" class="nav-link" data-scroll-target="#classes">Classes</a></li>
+  <li><a href="#slots" id="toc-slots" class="nav-link" data-scroll-target="#slots">Slots</a></li>
+  <li><a href="#enumerations" id="toc-enumerations" class="nav-link" data-scroll-target="#enumerations">Enumerations</a></li>
+  <li><a href="#types" id="toc-types" class="nav-link" data-scroll-target="#types">Types</a></li>
+  <li><a href="#subsets" id="toc-subsets" class="nav-link" data-scroll-target="#subsets">Subsets</a></li>
+  </ul></li>
   </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Classes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
-    <span class="md-ellipsis">
-      Slots
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enumerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enumerations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
-    <span class="md-ellipsis">
-      Types
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subsets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Subsets
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-  
-  
+<div class="toc-actions"><ul><li><a href="https://github.com/saved-models/data-model/issues/new/choose" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
 
 
-<h1 id="saved-meta-model">SAVED meta-model</h1>
+
+
+<section id="saved-meta-model" class="level1">
+<h1>SAVED meta-model</h1>
 <p>URI: https://marine.gov.scot/metadata/saved/schema/meta/</p>
 <p>Name: meta</p>
-<h2 id="classes">Classes</h2>
-<table>
+<section id="classes" class="level2">
+<h2 class="anchored" data-anchor-id="classes">Classes</h2>
+<table class="caption-top table">
 <thead>
-<tr>
+<tr class="header">
 <th>Class</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="ExtColumnDesc/">ExtColumnDesc</a></td>
+<tr class="odd">
+<td><a href="../schema/ExtColumnDesc.html">ExtColumnDesc</a></td>
 <td>Catch-all external column description</td>
 </tr>
-<tr>
-<td><a href="JobDesc/">JobDesc</a></td>
+<tr class="even">
+<td><a href="../schema/JobDesc.html">JobDesc</a></td>
 <td>Manifest: job specification attributes which specific job sub-classes inherit</td>
 </tr>
-<tr>
-<td><a href="ManifestDesc/">ManifestDesc</a></td>
+<tr class="odd">
+<td><a href="../schema/ManifestDesc.html">ManifestDesc</a></td>
 <td>Manifest: job invocation specification</td>
 </tr>
-<tr>
-<td><a href="ScopeDesc/">ScopeDesc</a></td>
+<tr class="even">
+<td><a href="../schema/ScopeDesc.html">ScopeDesc</a></td>
 <td>Manifest: column scope description and attributes including variable underpinning the column</td>
 </tr>
-<tr>
-<td><a href="TableDesc/">TableDesc</a></td>
+<tr class="odd">
+<td><a href="../schema/TableDesc.html">TableDesc</a></td>
 <td>Manifest: data source descriptive attributes</td>
 </tr>
 </tbody>
 </table>
-<h2 id="slots">Slots</h2>
-<table>
+</section>
+<section id="slots" class="level2">
+<h2 class="anchored" data-anchor-id="slots">Slots</h2>
+<table class="caption-top table">
 <thead>
-<tr>
+<tr class="header">
 <th>Slot</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="atomic_name/">atomic_name</a></td>
-<td>Short-form name / atom: lower-case, no special characters excepting underscor...</td>
+<tr class="odd">
+<td><a href="../schema/atomic_name.html">atomic_name</a></td>
+<td>Short-form name / atom: lower-case, no special characters excepting underscor…</td>
 </tr>
-<tr>
-<td><a href="cage_id/">cage_id</a></td>
+<tr class="even">
+<td><a href="../schema/cage_id.html">cage_id</a></td>
 <td>Semi-numeric cage identifier, related to station/site</td>
 </tr>
-<tr>
-<td><a href="column/">column</a></td>
+<tr class="odd">
+<td><a href="../schema/column.html">column</a></td>
 <td>Column name in table</td>
 </tr>
-<tr>
-<td><a href="column_collected/">column_collected</a></td>
+<tr class="even">
+<td><a href="../schema/column_collected.html">column_collected</a></td>
 <td>Column describes collected data</td>
 </tr>
-<tr>
-<td><a href="column_descriptive/">column_descriptive</a></td>
+<tr class="odd">
+<td><a href="../schema/column_descriptive.html">column_descriptive</a></td>
 <td>Column describes data about the world</td>
 </tr>
-<tr>
-<td><a href="column_modelled/">column_modelled</a></td>
+<tr class="even">
+<td><a href="../schema/column_modelled.html">column_modelled</a></td>
 <td>Column describes modelled data</td>
 </tr>
-<tr>
-<td><a href="count_fish_collected/">count_fish_collected</a></td>
+<tr class="odd">
+<td><a href="../schema/count_fish_collected.html">count_fish_collected</a></td>
 <td>Sampled number of fish in the farm</td>
 </tr>
-<tr>
-<td><a href="count_fish_interpolated/">count_fish_interpolated</a></td>
+<tr class="even">
+<td><a href="../schema/count_fish_interpolated.html">count_fish_interpolated</a></td>
 <td>Interpolated number of fish in the farm</td>
 </tr>
-<tr>
-<td><a href="depth/">depth</a></td>
+<tr class="odd">
+<td><a href="../schema/depth.html">depth</a></td>
 <td>Depth in metres</td>
 </tr>
-<tr>
-<td><a href="description/">description</a></td>
+<tr class="even">
+<td><a href="../schema/description.html">description</a></td>
 <td>Human-readable description of the element</td>
 </tr>
-<tr>
-<td><a href="easting/">easting</a></td>
-<td>'Y'-positional data relative to point of origin</td>
+<tr class="odd">
+<td><a href="../schema/easting.html">easting</a></td>
+<td>‘Y’-positional data relative to point of origin</td>
 </tr>
-<tr>
-<td><a href="fish_length/">fish_length</a></td>
+<tr class="even">
+<td><a href="../schema/fish_length.html">fish_length</a></td>
 <td>Length of fish expressed (mm)</td>
 </tr>
-<tr>
-<td><a href="fish_mass/">fish_mass</a></td>
+<tr class="odd">
+<td><a href="../schema/fish_mass.html">fish_mass</a></td>
 <td>Weight of fish expressed (g)</td>
 </tr>
-<tr>
-<td><a href="fish_species_common/">fish_species_common</a></td>
+<tr class="even">
+<td><a href="../schema/fish_species_common.html">fish_species_common</a></td>
 <td>Common name of species sampled</td>
 </tr>
-<tr>
-<td><a href="fish_species_scientific/">fish_species_scientific</a></td>
+<tr class="odd">
+<td><a href="../schema/fish_species_scientific.html">fish_species_scientific</a></td>
 <td>Scientific name of species sampled</td>
 </tr>
-<tr>
-<td><a href="gcp_source/">gcp_source</a></td>
+<tr class="even">
+<td><a href="../schema/gcp_source.html">gcp_source</a></td>
 <td>GCP account of the generator of the manifest</td>
 </tr>
-<tr>
-<td><a href="global_coordinate_system/">global_coordinate_system</a></td>
+<tr class="odd">
+<td><a href="../schema/global_coordinate_system.html">global_coordinate_system</a></td>
 <td>Global coordinate system (GCS) reference point of origin</td>
 </tr>
-<tr>
-<td><a href="hash/">hash</a></td>
+<tr class="even">
+<td><a href="../schema/hash.html">hash</a></td>
 <td>Checksum of some file</td>
 </tr>
-<tr>
-<td><a href="job_scope/">job_scope</a></td>
+<tr class="odd">
+<td><a href="../schema/job_scope.html">job_scope</a></td>
 <td>A collection of column descriptions</td>
 </tr>
-<tr>
-<td><a href="job_scope_collected/">job_scope_collected</a></td>
+<tr class="even">
+<td><a href="../schema/job_scope_collected.html">job_scope_collected</a></td>
 <td>A collection of column descriptions which are collected or sampled</td>
 </tr>
-<tr>
-<td><a href="job_scope_descriptive/">job_scope_descriptive</a></td>
+<tr class="odd">
+<td><a href="../schema/job_scope_descriptive.html">job_scope_descriptive</a></td>
 <td>A collection of column descriptions which describe something about the world</td>
 </tr>
-<tr>
-<td><a href="job_scope_modelled/">job_scope_modelled</a></td>
+<tr class="even">
+<td><a href="../schema/job_scope_modelled.html">job_scope_modelled</a></td>
 <td>A collection of column descriptions which are modelled or simulated</td>
 </tr>
-<tr>
-<td><a href="job_type/">job_type</a></td>
-<td>While this is analogous to Dublin Core's notion of type, it is specific to jo...</td>
+<tr class="odd">
+<td><a href="../schema/job_type.html">job_type</a></td>
+<td>While this is analogous to Dublin Core’s notion of type, it is specific to jo…</td>
 </tr>
-<tr>
-<td><a href="jobs/">jobs</a></td>
+<tr class="even">
+<td><a href="../schema/jobs.html">jobs</a></td>
 <td>Specification of operations to run on resources and schemas provided</td>
 </tr>
-<tr>
-<td><a href="latitude/">latitude</a></td>
+<tr class="odd">
+<td><a href="../schema/latitude.html">latitude</a></td>
 <td>Latitude</td>
 </tr>
-<tr>
-<td><a href="lice_af_average/">lice_af_average</a></td>
+<tr class="even">
+<td><a href="../schema/lice_af_average.html">lice_af_average</a></td>
 <td>Average number of Salmon lice (adult female) per fish</td>
 </tr>
-<tr>
-<td><a href="lice_af_total/">lice_af_total</a></td>
+<tr class="odd">
+<td><a href="../schema/lice_af_total.html">lice_af_total</a></td>
 <td>Total number of Salmon lice per fish</td>
 </tr>
-<tr>
-<td><a href="lice_density_collected/">lice_density_collected</a></td>
+<tr class="even">
+<td><a href="../schema/lice_density_collected.html">lice_density_collected</a></td>
 <td>Sampled lice density (lice per m³)</td>
 </tr>
-<tr>
-<td><a href="lice_density_modelled/">lice_density_modelled</a></td>
+<tr class="odd">
+<td><a href="../schema/lice_density_modelled.html">lice_density_modelled</a></td>
 <td>Modelled lice density (lice per m³)</td>
 </tr>
-<tr>
-<td><a href="local_version/">local_version</a></td>
+<tr class="even">
+<td><a href="../schema/local_version.html">local_version</a></td>
 <td>Version number of local submission utility</td>
 </tr>
-<tr>
-<td><a href="longitude/">longitude</a></td>
+<tr class="odd">
+<td><a href="../schema/longitude.html">longitude</a></td>
 <td>Longitude</td>
 </tr>
-<tr>
-<td><a href="national_grid_reference/">national_grid_reference</a></td>
+<tr class="even">
+<td><a href="../schema/national_grid_reference.html">national_grid_reference</a></td>
 <td>National grid reference (NGR) point of origin</td>
 </tr>
-<tr>
-<td><a href="northing/">northing</a></td>
-<td>'X'-positional data relative to point of origin</td>
+<tr class="odd">
+<td><a href="../schema/northing.html">northing</a></td>
+<td>‘X’-positional data relative to point of origin</td>
 </tr>
-<tr>
-<td><a href="notes/">notes</a></td>
+<tr class="even">
+<td><a href="../schema/notes.html">notes</a></td>
 <td>Notes pertinent to observation, a set of observations, or a data-set</td>
 </tr>
-<tr>
-<td><a href="path/">path</a></td>
+<tr class="odd">
+<td><a href="../schema/path.html">path</a></td>
 <td>Path or URI</td>
 </tr>
-<tr>
-<td><a href="provenance/">provenance</a></td>
+<tr class="even">
+<td><a href="../schema/provenance.html">provenance</a></td>
 <td>Provenance of an element, or a set of elements</td>
 </tr>
-<tr>
-<td><a href="resource_hash/">resource_hash</a></td>
+<tr class="odd">
+<td><a href="../schema/resource_hash.html">resource_hash</a></td>
 <td>Checksum of resource</td>
 </tr>
-<tr>
-<td><a href="resource_path/">resource_path</a></td>
+<tr class="even">
+<td><a href="../schema/resource_path.html">resource_path</a></td>
 <td>Path or URI of resource</td>
 </tr>
-<tr>
-<td><a href="schema_path_ttl/">schema_path_ttl</a></td>
-<td>Path of URI of schema associated with resource (RDF/TTL conversion of LinkML ...</td>
+<tr class="odd">
+<td><a href="../schema/schema_path_ttl.html">schema_path_ttl</a></td>
+<td>Path of URI of schema associated with resource (RDF/TTL conversion of LinkML …</td>
 </tr>
-<tr>
-<td><a href="schema_path_yaml/">schema_path_yaml</a></td>
+<tr class="even">
+<td><a href="../schema/schema_path_yaml.html">schema_path_yaml</a></td>
 <td>Path or URI of schema associated with resource (LinkML YAML)</td>
 </tr>
-<tr>
-<td><a href="series/">series</a></td>
+<tr class="odd">
+<td><a href="../schema/series.html">series</a></td>
 <td>Data series to which a given observation belongs</td>
 </tr>
-<tr>
-<td><a href="site_id/">site_id</a></td>
+<tr class="even">
+<td><a href="../schema/site_id.html">site_id</a></td>
 <td>Fish farm station/site global ID</td>
 </tr>
-<tr>
-<td><a href="site_name/">site_name</a></td>
+<tr class="odd">
+<td><a href="../schema/site_name.html">site_name</a></td>
 <td>Fish farm station/site local name</td>
 </tr>
-<tr>
-<td><a href="table/">table</a></td>
-<td>Table description from which column is drawn, specifically matching the `atom...</td>
+<tr class="even">
+<td><a href="../schema/table.html">table</a></td>
+<td>Table description from which column is drawn, specifically matching the `atom…</td>
 </tr>
-<tr>
-<td><a href="tables/">tables</a></td>
-<td>Specification of mappings between resources and schemas, as well as columns o...</td>
+<tr class="odd">
+<td><a href="../schema/tables.html">tables</a></td>
+<td>Specification of mappings between resources and schemas, as well as columns o…</td>
 </tr>
-<tr>
-<td><a href="title/">title</a></td>
+<tr class="even">
+<td><a href="../schema/title.html">title</a></td>
 <td>Concise human-readable name for the element</td>
 </tr>
-<tr>
-<td><a href="type/">type</a></td>
+<tr class="odd">
+<td><a href="../schema/type.html">type</a></td>
 <td>Nature or genre of the element</td>
 </tr>
-<tr>
-<td><a href="variable/">variable</a></td>
-<td>Name of variable underpinning column, specific to the job, used for pattern-m...</td>
+<tr class="even">
+<td><a href="../schema/variable.html">variable</a></td>
+<td>Name of variable underpinning column, specific to the job, used for pattern-m…</td>
 </tr>
 </tbody>
 </table>
-<h2 id="enumerations">Enumerations</h2>
-<table>
+</section>
+<section id="enumerations" class="level2">
+<h2 class="anchored" data-anchor-id="enumerations">Enumerations</h2>
+<table class="caption-top table">
 <thead>
-<tr>
+<tr class="header">
 <th>Enumeration</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="JobType/">JobType</a></td>
+<tr class="odd">
+<td><a href="../schema/JobType.html">JobType</a></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="types">Types</h2>
-<table>
+</section>
+<section id="types" class="level2">
+<h2 class="anchored" data-anchor-id="types">Types</h2>
+<table class="caption-top table">
 <thead>
-<tr>
+<tr class="header">
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="Boolean/">Boolean</a></td>
+<tr class="odd">
+<td><a href="../schema/Boolean.html">Boolean</a></td>
 <td>A binary (true or false) value</td>
 </tr>
-<tr>
-<td><a href="Curie/">Curie</a></td>
+<tr class="even">
+<td><a href="../schema/Curie.html">Curie</a></td>
 <td>a compact URI</td>
 </tr>
-<tr>
-<td><a href="Date/">Date</a></td>
+<tr class="odd">
+<td><a href="../schema/Date.html">Date</a></td>
 <td>a date (year, month and day) in an idealized calendar</td>
 </tr>
-<tr>
-<td><a href="DateOrDatetime/">DateOrDatetime</a></td>
+<tr class="even">
+<td><a href="../schema/DateOrDatetime.html">DateOrDatetime</a></td>
 <td>Either a date or a datetime</td>
 </tr>
-<tr>
-<td><a href="Datetime/">Datetime</a></td>
+<tr class="odd">
+<td><a href="../schema/Datetime.html">Datetime</a></td>
 <td>The combination of a date and time</td>
 </tr>
-<tr>
-<td><a href="Decimal/">Decimal</a></td>
-<td>A real number with arbitrary precision that conforms to the xsd:decimal speci...</td>
+<tr class="even">
+<td><a href="../schema/Decimal.html">Decimal</a></td>
+<td>A real number with arbitrary precision that conforms to the xsd:decimal speci…</td>
 </tr>
-<tr>
-<td><a href="Double/">Double</a></td>
+<tr class="odd">
+<td><a href="../schema/Double.html">Double</a></td>
 <td>A real number that conforms to the xsd:double specification</td>
 </tr>
-<tr>
-<td><a href="Float/">Float</a></td>
+<tr class="even">
+<td><a href="../schema/Float.html">Float</a></td>
 <td>A real number that conforms to the xsd:float specification</td>
 </tr>
-<tr>
-<td><a href="Integer/">Integer</a></td>
+<tr class="odd">
+<td><a href="../schema/Integer.html">Integer</a></td>
 <td>An integer</td>
 </tr>
-<tr>
-<td><a href="Jsonpath/">Jsonpath</a></td>
+<tr class="even">
+<td><a href="../schema/Jsonpath.html">Jsonpath</a></td>
 <td>A string encoding a JSON Path</td>
 </tr>
-<tr>
-<td><a href="Jsonpointer/">Jsonpointer</a></td>
+<tr class="odd">
+<td><a href="../schema/Jsonpointer.html">Jsonpointer</a></td>
 <td>A string encoding a JSON Pointer</td>
 </tr>
-<tr>
-<td><a href="LatLonType/">LatLonType</a></td>
+<tr class="even">
+<td><a href="../schema/LatLonType.html">LatLonType</a></td>
 <td></td>
 </tr>
-<tr>
-<td><a href="Ncname/">Ncname</a></td>
+<tr class="odd">
+<td><a href="../schema/Ncname.html">Ncname</a></td>
 <td>Prefix part of CURIE</td>
 </tr>
-<tr>
-<td><a href="Nodeidentifier/">Nodeidentifier</a></td>
+<tr class="even">
+<td><a href="../schema/Nodeidentifier.html">Nodeidentifier</a></td>
 <td>A URI, CURIE or BNODE that represents a node in a model</td>
 </tr>
-<tr>
-<td><a href="Objectidentifier/">Objectidentifier</a></td>
+<tr class="odd">
+<td><a href="../schema/Objectidentifier.html">Objectidentifier</a></td>
 <td>A URI or CURIE that represents an object in the model</td>
 </tr>
-<tr>
-<td><a href="Sparqlpath/">Sparqlpath</a></td>
+<tr class="even">
+<td><a href="../schema/Sparqlpath.html">Sparqlpath</a></td>
 <td>A string encoding a SPARQL Property Path</td>
 </tr>
-<tr>
-<td><a href="String/">String</a></td>
+<tr class="odd">
+<td><a href="../schema/String.html">String</a></td>
 <td>A character string</td>
 </tr>
-<tr>
-<td><a href="Time/">Time</a></td>
-<td>A time object represents a (local) time of day, independent of any particular...</td>
+<tr class="even">
+<td><a href="../schema/Time.html">Time</a></td>
+<td>A time object represents a (local) time of day, independent of any particular…</td>
 </tr>
-<tr>
-<td><a href="Uri/">Uri</a></td>
+<tr class="odd">
+<td><a href="../schema/Uri.html">Uri</a></td>
 <td>a complete URI</td>
 </tr>
-<tr>
-<td><a href="Uriorcurie/">Uriorcurie</a></td>
+<tr class="even">
+<td><a href="../schema/Uriorcurie.html">Uriorcurie</a></td>
 <td>a URI or a CURIE</td>
 </tr>
 </tbody>
 </table>
-<h2 id="subsets">Subsets</h2>
-<table>
+</section>
+<section id="subsets" class="level2">
+<h2 class="anchored" data-anchor-id="subsets">Subsets</h2>
+<table class="caption-top">
 <thead>
-<tr>
+<tr class="header">
 <th>Subset</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
 
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/marine\.gov\.scot\/metadata\/saved\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
 
 
 
 
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
-
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
-    </div>
-  </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.tabs.link"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-    
-    
-      <script src="assets/javascripts/bundle.1e8ae164.min.js"></script>
-      
-    
-  </body>
-</html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/saved-models/data-model/issues/new/choose" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

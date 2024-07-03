@@ -1,7 +1,6 @@
 
 # Slot: depth
 
-
 Depth in metres
 
 URI: [saved:depth](https://marine.gov.scot/metadata/saved/schema/depth)

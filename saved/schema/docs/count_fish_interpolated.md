@@ -1,7 +1,6 @@
 
 # Slot: count_fish_interpolated
 
-
 Interpolated number of fish in the farm
 
 URI: [saved:count_fish_interpolated](https://marine.gov.scot/metadata/saved/schema/count_fish_interpolated)
@@ -26,4 +25,3 @@ None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
 |  |  |  |
 | --- | --- | --- |
 | **Narrow Mappings:** | | saved:count_fish_collected |
-

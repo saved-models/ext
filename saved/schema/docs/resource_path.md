@@ -1,7 +1,6 @@
 
 # Slot: resource_path
 
-
 Path or URI of resource
 
 URI: [saved:resource_path](https://marine.gov.scot/metadata/saved/schema/resource_path)

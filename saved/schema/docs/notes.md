@@ -1,7 +1,6 @@
 
 # Slot: notes
 
-
 Notes pertinent to observation, a set of observations, or a data-set
 
 URI: [saved:notes](https://marine.gov.scot/metadata/saved/schema/notes)
@@ -26,4 +25,3 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Narrow Mappings:** | | saved:provenance |
-

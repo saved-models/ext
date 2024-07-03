@@ -1,7 +1,6 @@
 
 # Slot: site_name
 
-
 Fish farm station/site local name
 
 URI: [saved:site_name](https://marine.gov.scot/metadata/saved/schema/site_name)

@@ -1,7 +1,6 @@
 
 # Slot: cage_id
 
-
 Semi-numeric cage identifier, related to station/site
 
 URI: [saved:cage_id](https://marine.gov.scot/metadata/saved/schema/cage_id)

@@ -1,7 +1,6 @@
 
 # Slot: job_scope
 
-
 A collection of column descriptions
 
 URI: [saved:job_scope](https://marine.gov.scot/metadata/saved/schema/job_scope)

@@ -1,7 +1,6 @@
 
 # Slot: hash
 
-
 Checksum of some file
 
 URI: [saved:hash](https://marine.gov.scot/metadata/saved/schema/hash)
@@ -26,4 +25,3 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | linkml:hash |
-

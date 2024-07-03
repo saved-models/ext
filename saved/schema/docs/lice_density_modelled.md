@@ -1,7 +1,6 @@
 
 # Slot: lice_density_modelled
 
-
 Modelled lice density (lice per m³)
 
 URI: [saved:lice_density_modelled](https://marine.gov.scot/metadata/saved/schema/lice_density_modelled)
@@ -26,4 +25,3 @@ None &#8594;  <sub>0..1</sub> [Float](types/Float.md)
 |  |  |  |
 | --- | --- | --- |
 | **Narrow Mappings:** | | saved:lice_density_collected |
-

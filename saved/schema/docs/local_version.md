@@ -1,7 +1,6 @@
 
 # Slot: local_version
 
-
 Version number of local submission utility
 
 URI: [saved:local_version](https://marine.gov.scot/metadata/saved/schema/local_version)
@@ -26,4 +25,3 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Narrow Mappings:** | | pav:version |
-

@@ -1,7 +1,6 @@
 
 # Slot: latitude
 
-
 Latitude
 
 URI: [saved:latitude](https://marine.gov.scot/metadata/saved/schema/latitude)

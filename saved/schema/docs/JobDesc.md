@@ -1,7 +1,6 @@
 
 # Class: JobDesc
 
-
 Manifest: job specification attributes which specific job sub-classes inherit
 
 URI: [saved:JobDesc](https://marine.gov.scot/metadata/saved/schema/JobDesc)

@@ -1,7 +1,6 @@
 
 # Slot: national_grid_reference
 
-
 National grid reference (NGR) point of origin
 
 URI: [saved:national_grid_reference](https://marine.gov.scot/metadata/saved/schema/national_grid_reference)

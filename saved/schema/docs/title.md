@@ -1,7 +1,6 @@
 
 # Slot: title
 
-
 Concise human-readable name for the element
 
 URI: [saved:title](https://marine.gov.scot/metadata/saved/schema/title)
@@ -27,4 +26,3 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | dcterms:title |
-

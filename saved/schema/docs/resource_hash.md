@@ -1,7 +1,6 @@
 
 # Slot: resource_hash
 
-
 Checksum of resource
 
 URI: [saved:resource_hash](https://marine.gov.scot/metadata/saved/schema/resource_hash)

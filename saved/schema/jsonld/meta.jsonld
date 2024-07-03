@@ -1111,9 +1111,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "meta.yaml",
-  "source_file_date": "2024-05-17T16:30:54",
-  "source_file_size": 470,
-  "generation_date": "2024-05-17T16:31:20",
+  "source_file_date": "2024-05-17T16:31:37",
+  "source_file_size": 534,
+  "generation_date": "2024-07-03T14:05:44",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/meta.context.jsonld",

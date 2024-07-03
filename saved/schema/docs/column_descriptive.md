@@ -1,7 +1,6 @@
 
 # Slot: column_descriptive
 
-
 Column describes data about the world
 
 URI: [saved:column_descriptive](https://marine.gov.scot/metadata/saved/schema/column_descriptive)

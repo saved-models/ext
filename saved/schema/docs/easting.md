@@ -1,7 +1,6 @@
 
 # Slot: easting
 
-
 'Y'-positional data relative to point of origin
 
 URI: [saved:easting](https://marine.gov.scot/metadata/saved/schema/easting)

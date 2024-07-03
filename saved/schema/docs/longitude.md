@@ -1,7 +1,6 @@
 
 # Slot: longitude
 
-
 Longitude
 
 URI: [saved:longitude](https://marine.gov.scot/metadata/saved/schema/longitude)

@@ -11,24 +11,24 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 saved:meta a saved:SchemaDefinition ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    dcterms:title "SAVED meta-model" ;
+    sh:declare [ sh:namespace saved: ;
+            sh:prefix "saved" ],
+        [ sh:namespace dcterms: ;
+            sh:prefix "dcterms" ],
+        [ sh:namespace saved:job_ ;
+            sh:prefix "job" ],
+        [ sh:namespace rap: ;
+            sh:prefix "rap" ],
+        [ sh:namespace linkml: ;
+            sh:prefix "linkml" ] ;
     saved:default_prefix "saved" ;
     saved:emit_prefixes "job",
         "rap",
         "saved" ;
     saved:metamodel_version "1.7.0" ;
     saved:source_file "meta.yaml" ;
-    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    dcterms:title "SAVED meta-model" ;
-    sh:declare [ sh:namespace saved:job_ ;
-            sh:prefix "job" ],
-        [ sh:namespace saved: ;
-            sh:prefix "saved" ],
-        [ sh:namespace linkml: ;
-            sh:prefix "linkml" ],
-        [ sh:namespace dcterms: ;
-            sh:prefix "dcterms" ],
-        [ sh:namespace rap: ;
-            sh:prefix "rap" ] ;
     linkml:classes saved:ExtColumnDesc,
         saved:JobDesc,
         saved:ManifestDesc,
@@ -36,7 +36,7 @@ saved:meta a saved:SchemaDefinition ;
         saved:TableDesc ;
     linkml:default_range saved:string ;
     linkml:enums saved:JobType ;
-    linkml:generation_date "2024-05-17T16:31:22"^^xsd:dateTime ;
+    linkml:generation_date "2024-07-03T14:15:21"^^xsd:dateTime ;
     linkml:id <https://marine.gov.scot/metadata/saved/schema/meta/> ;
     linkml:imports saved:collected,
         saved:core,
@@ -93,8 +93,8 @@ saved:meta a saved:SchemaDefinition ;
         saved:title,
         saved:type,
         saved:variable ;
-    linkml:source_file_date "2024-05-17T16:30:54"^^xsd:dateTime ;
-    linkml:source_file_size 470 ;
+    linkml:source_file_date "2024-05-17T16:31:37"^^xsd:dateTime ;
+    linkml:source_file_size 534 ;
     linkml:types saved:LatLonType,
         saved:boolean,
         saved:curie,
@@ -117,169 +117,169 @@ saved:meta a saved:SchemaDefinition ;
         saved:uriorcurie .
 
 saved:boolean a saved:TypeDefinition ;
+    dcterms:description "A binary (true or false) value" ;
+    skos:exactMatch schema1:Boolean ;
+    skos:inScheme linkml:types ;
     saved:base "Bool" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"." ;
     saved:repr "bool" ;
-    dcterms:description "A binary (true or false) value" ;
-    skos:exactMatch schema1:Boolean ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Boolean ;
     linkml:uri xsd:boolean .
 
 saved:curie a saved:TypeDefinition ;
-    saved:base "Curie" ;
-    saved:imported_from "linkml:types" ;
-    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"." ;
-    saved:repr "str" ;
     dcterms:conformsTo "https://www.w3.org/TR/curie/" ;
     dcterms:description "a compact URI" ;
     skos:inScheme linkml:types ;
     skos:note "in RDF serializations this MUST be expanded to a URI",
         "in non-RDF serializations MAY be serialized as the compact representation" ;
+    saved:base "Curie" ;
+    saved:imported_from "linkml:types" ;
+    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"." ;
+    saved:repr "str" ;
     linkml:definition_uri linkml:Curie ;
     linkml:uri xsd:string .
 
 saved:date a saved:TypeDefinition ;
+    dcterms:description "a date (year, month and day) in an idealized calendar" ;
+    skos:exactMatch schema1:Date ;
+    skos:inScheme linkml:types ;
     saved:base "XSDDate" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\".",
         "URI is dateTime because OWL reasoners don't work with straight date or time" ;
     saved:repr "str" ;
-    dcterms:description "a date (year, month and day) in an idealized calendar" ;
-    skos:exactMatch schema1:Date ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Date ;
     linkml:uri xsd:date .
 
 saved:date_or_datetime a saved:TypeDefinition ;
+    dcterms:description "Either a date or a datetime" ;
+    skos:inScheme linkml:types ;
     saved:base "str" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"." ;
     saved:repr "str" ;
-    dcterms:description "Either a date or a datetime" ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:DateOrDatetime ;
     linkml:uri linkml:DateOrDatetime .
 
 saved:datetime a saved:TypeDefinition ;
+    dcterms:description "The combination of a date and time" ;
+    skos:exactMatch schema1:DateTime ;
+    skos:inScheme linkml:types ;
     saved:base "XSDDateTime" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"." ;
     saved:repr "str" ;
-    dcterms:description "The combination of a date and time" ;
-    skos:exactMatch schema1:DateTime ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Datetime ;
     linkml:uri xsd:dateTime .
 
 saved:decimal a saved:TypeDefinition ;
-    saved:base "Decimal" ;
-    saved:imported_from "linkml:types" ;
-    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"." ;
     dcterms:description "A real number with arbitrary precision that conforms to the xsd:decimal specification" ;
     skos:broadMatch schema1:Number ;
     skos:inScheme linkml:types ;
+    saved:base "Decimal" ;
+    saved:imported_from "linkml:types" ;
+    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"." ;
     linkml:definition_uri linkml:Decimal ;
     linkml:uri xsd:decimal .
 
 saved:density dcterms:description "ODE version of the sea lice accumulation model" .
 
 saved:double a saved:TypeDefinition ;
-    saved:base "float" ;
-    saved:imported_from "linkml:types" ;
-    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"." ;
     dcterms:description "A real number that conforms to the xsd:double specification" ;
     skos:closeMatch schema1:Float ;
     skos:inScheme linkml:types ;
+    saved:base "float" ;
+    saved:imported_from "linkml:types" ;
+    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"." ;
     linkml:definition_uri linkml:Double ;
     linkml:uri xsd:double .
 
 saved:ignore dcterms:description "Dummy job to ignore: Associated job description may describe arbitrary columns, underlying variables, or tables" .
 
 saved:jsonpath a saved:TypeDefinition ;
+    dcterms:conformsTo "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html" ;
+    dcterms:description "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form." ;
+    skos:inScheme linkml:types ;
     saved:base "str" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"." ;
     saved:repr "str" ;
-    dcterms:conformsTo "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html" ;
-    dcterms:description "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form." ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Jsonpath ;
     linkml:uri xsd:string .
 
 saved:jsonpointer a saved:TypeDefinition ;
+    dcterms:conformsTo "https://datatracker.ietf.org/doc/html/rfc6901" ;
+    dcterms:description "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form." ;
+    skos:inScheme linkml:types ;
     saved:base "str" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"." ;
     saved:repr "str" ;
-    dcterms:conformsTo "https://datatracker.ietf.org/doc/html/rfc6901" ;
-    dcterms:description "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form." ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Jsonpointer ;
     linkml:uri xsd:string .
 
 saved:ncname a saved:TypeDefinition ;
+    dcterms:description "Prefix part of CURIE" ;
+    skos:inScheme linkml:types ;
     saved:base "NCName" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"." ;
     saved:repr "str" ;
-    dcterms:description "Prefix part of CURIE" ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Ncname ;
     linkml:uri xsd:string .
 
 saved:nodeidentifier a saved:TypeDefinition ;
+    dcterms:description "A URI, CURIE or BNODE that represents a node in a model." ;
+    skos:inScheme linkml:types ;
     saved:base "NodeIdentifier" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"." ;
     saved:repr "str" ;
-    dcterms:description "A URI, CURIE or BNODE that represents a node in a model." ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Nodeidentifier ;
     linkml:uri shex:nonLiteral .
 
 saved:objectidentifier a saved:TypeDefinition ;
+    dcterms:description "A URI or CURIE that represents an object in the model." ;
+    skos:inScheme linkml:types ;
+    skos:note "Used for inheritance and type checking" ;
     saved:base "ElementIdentifier" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"." ;
     saved:repr "str" ;
-    dcterms:description "A URI or CURIE that represents an object in the model." ;
-    skos:inScheme linkml:types ;
-    skos:note "Used for inheritance and type checking" ;
     linkml:definition_uri linkml:Objectidentifier ;
     linkml:uri shex:iri .
 
 saved:sparqlpath a saved:TypeDefinition ;
+    dcterms:conformsTo "https://www.w3.org/TR/sparql11-query/#propertypaths" ;
+    dcterms:description "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF." ;
+    skos:inScheme linkml:types ;
     saved:base "str" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"." ;
     saved:repr "str" ;
-    dcterms:conformsTo "https://www.w3.org/TR/sparql11-query/#propertypaths" ;
-    dcterms:description "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF." ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Sparqlpath ;
     linkml:uri xsd:string .
 
 saved:time a saved:TypeDefinition ;
+    dcterms:description "A time object represents a (local) time of day, independent of any particular day" ;
+    skos:exactMatch schema1:Time ;
+    skos:inScheme linkml:types ;
     saved:base "XSDTime" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\".",
         "URI is dateTime because OWL reasoners do not work with straight date or time" ;
     saved:repr "str" ;
-    dcterms:description "A time object represents a (local) time of day, independent of any particular day" ;
-    skos:exactMatch schema1:Time ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Time ;
     linkml:uri xsd:time .
 
 saved:uriorcurie a saved:TypeDefinition ;
+    dcterms:description "a URI or a CURIE" ;
+    skos:inScheme linkml:types ;
     saved:base "URIorCURIE" ;
     saved:imported_from "linkml:types" ;
     saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"." ;
     saved:repr "str" ;
-    dcterms:description "a URI or a CURIE" ;
-    skos:inScheme linkml:types ;
     linkml:definition_uri linkml:Uriorcurie ;
     linkml:uri xsd:anyURI .
 
@@ -292,9 +292,9 @@ saved:cage_id a saved:SlotDefinition ;
     dcterms:description "Semi-numeric cage identifier, related to station/site" ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
     linkml:any_of [ a saved:AnonymousSlotExpression ;
-            linkml:range saved:string ],
+            linkml:range saved:integer ],
         [ a saved:AnonymousSlotExpression ;
-            linkml:range saved:integer ] ;
+            linkml:range saved:string ] ;
     linkml:definition_uri saved:cage_id ;
     linkml:is_a saved:column_descriptive ;
     linkml:range saved:string ;
@@ -439,10 +439,10 @@ saved:type a saved:SlotDefinition ;
     linkml:slot_uri dcterms:type .
 
 saved:LatLonType a saved:TypeDefinition ;
+    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/types/> ;
     saved:base "str" ;
     saved:pattern "[0-9]+o [0-9]+.[0-9]+[N|W]" ;
     saved:repr "str" ;
-    skos:inScheme <https://marine.gov.scot/metadata/saved/schema/types/> ;
     linkml:definition_uri saved:LatLonType ;
     linkml:uri saved:LatLon .
 
@@ -612,8 +612,8 @@ saved:notes a saved:SlotDefinition ;
 saved:provenance a saved:SlotDefinition ;
     dcterms:description "Provenance of an element, or a set of elements. This is distinct from Dublin Core's notion of provenance, which concerns any changes in ownership/custody of the resource since its creation." ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/core/> ;
-    skos:narrowMatch saved:notes,
-        dcterms:provenance ;
+    skos:narrowMatch dcterms:provenance,
+        saved:notes ;
     linkml:definition_uri saved:provenance ;
     linkml:range saved:string ;
     linkml:slot_uri saved:provenance .
@@ -721,25 +721,25 @@ saved:column_modelled a saved:SlotDefinition ;
     linkml:slot_uri saved:column_modelled .
 
 saved:integer a saved:TypeDefinition ;
-    saved:base "int" ;
-    saved:imported_from "linkml:types" ;
-    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"." ;
     dcterms:description "An integer" ;
     skos:exactMatch schema1:Integer ;
     skos:inScheme linkml:types ;
+    saved:base "int" ;
+    saved:imported_from "linkml:types" ;
+    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"." ;
     linkml:definition_uri linkml:Integer ;
     linkml:uri xsd:integer .
 
 saved:uri a saved:TypeDefinition ;
-    saved:base "URI" ;
-    saved:imported_from "linkml:types" ;
-    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"." ;
-    saved:repr "str" ;
     dcterms:conformsTo "https://www.ietf.org/rfc/rfc3987.txt" ;
     dcterms:description "a complete URI" ;
     skos:closeMatch schema1:URL ;
     skos:inScheme linkml:types ;
     skos:note "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node" ;
+    saved:base "URI" ;
+    saved:imported_from "linkml:types" ;
+    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"." ;
+    saved:repr "str" ;
     linkml:definition_uri linkml:Uri ;
     linkml:uri xsd:anyURI .
 
@@ -762,12 +762,12 @@ saved:path a saved:SlotDefinition ;
     linkml:slot_uri saved:path .
 
 saved:atomic_name a saved:SlotDefinition ;
-    saved:pattern "^:?[a-z]+[[a-z]|_|]*$" ;
     dcterms:description "Short-form name / atom: lower-case, no special characters excepting underscores" ;
-    skos:broadMatch saved:name,
-        dc:title ;
+    skos:broadMatch dc:title,
+        saved:name ;
     skos:exactMatch dc:identifier ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> ;
+    saved:pattern "^:?[a-z]+[[a-z]|_|]*$" ;
     linkml:definition_uri saved:atomic_name ;
     linkml:domain_of saved:ExtColumnDesc,
         saved:JobDesc,
@@ -787,12 +787,12 @@ saved:column_collected a saved:SlotDefinition ;
     linkml:slot_uri saved:column_collected .
 
 saved:float a saved:TypeDefinition ;
-    saved:base "float" ;
-    saved:imported_from "linkml:types" ;
-    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"." ;
     dcterms:description "A real number that conforms to the xsd:float specification" ;
     skos:exactMatch schema1:Float ;
     skos:inScheme linkml:types ;
+    saved:base "float" ;
+    saved:imported_from "linkml:types" ;
+    saved:notes "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"." ;
     linkml:definition_uri linkml:Float ;
     linkml:uri xsd:float .
 
@@ -853,12 +853,12 @@ saved:TableDesc a saved:ClassDefinition ;
         saved:title .
 
 saved:string a saved:TypeDefinition ;
-    saved:base "str" ;
-    saved:imported_from "linkml:types" ;
-    saved:notes "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"." ;
     dcterms:description "A character string" ;
     skos:exactMatch schema1:Text ;
     skos:inScheme linkml:types ;
+    saved:base "str" ;
+    saved:imported_from "linkml:types" ;
+    saved:notes "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"." ;
     linkml:definition_uri linkml:String ;
     linkml:uri xsd:string .
 

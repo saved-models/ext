@@ -1,7 +1,6 @@
 
 # Slot: jobs
 
-
 Specification of operations to run on resources and schemas provided
 
 URI: [saved:jobs](https://marine.gov.scot/metadata/saved/schema/jobs)

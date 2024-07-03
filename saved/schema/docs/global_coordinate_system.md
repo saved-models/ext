@@ -1,7 +1,6 @@
 
 # Slot: global_coordinate_system
 
-
 Global coordinate system (GCS) reference point of origin
 
 URI: [saved:global_coordinate_system](https://marine.gov.scot/metadata/saved/schema/global_coordinate_system)

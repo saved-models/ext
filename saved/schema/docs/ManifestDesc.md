@@ -1,7 +1,6 @@
 
 # Class: ManifestDesc
 
-
 Manifest: job invocation specification
 
 URI: [saved:ManifestDesc](https://marine.gov.scot/metadata/saved/schema/ManifestDesc)

@@ -1,7 +1,6 @@
 
 # Slot: column_collected
 
-
 Column describes collected data
 
 URI: [saved:column_collected](https://marine.gov.scot/metadata/saved/schema/column_collected)

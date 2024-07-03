@@ -1,7 +1,6 @@
 
 # Slot: type
 
-
 Nature or genre of the element
 
 URI: [saved:type](https://marine.gov.scot/metadata/saved/schema/type)
@@ -25,4 +24,3 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | dcterms:type |
-

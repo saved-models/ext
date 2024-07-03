@@ -16,22 +16,10 @@ saved:ManifestDesc a owl:Class,
             owl:onProperty saved:local_version ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty saved:local_version ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty saved:jobs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty saved:gcp_source ],
         [ a owl:Restriction ;
             owl:allValuesFrom saved:TableDesc ;
             owl:onProperty saved:tables ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty saved:tables ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saved:gcp_source ],
         [ a owl:Restriction ;
             owl:allValuesFrom saved:JobDesc ;
             owl:onProperty saved:jobs ],
@@ -40,19 +28,31 @@ saved:ManifestDesc a owl:Class,
             owl:onProperty saved:local_version ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty saved:atomic_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty saved:atomic_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
             owl:onProperty saved:gcp_source ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( linkml:String [ a rdfs:Datatype ;
                                 owl:onDatatype xsd:string ;
                                 owl:withRestrictions ( [ xsd:pattern "^:?[a-z]+[[a-z]|_|]*$" ] ) ] ) ] ;
-            owl:onProperty saved:atomic_name ] ;
+            owl:onProperty saved:atomic_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty saved:atomic_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saved:local_version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty saved:gcp_source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty saved:tables ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saved:atomic_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty saved:jobs ] ;
     skos:definition "Manifest: job invocation specification" ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> .
 
@@ -188,31 +188,31 @@ saved:ScopeDesc a owl:Class,
     rdfs:label "ScopeDesc" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty saved:variable ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saved:column ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty saved:table ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom saved:TableDesc ;
             owl:onProperty saved:table ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty saved:variable ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty saved:column ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty saved:column ],
+            owl:onProperty saved:table ],
         [ a owl:Restriction ;
             owl:allValuesFrom saved:ExtColumnDesc ;
             owl:onProperty saved:variable ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty saved:table ] ;
+            owl:onProperty saved:variable ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty saved:column ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saved:column ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saved:TableDesc ;
+            owl:onProperty saved:table ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty saved:variable ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty saved:column ] ;
     skos:definition "Manifest: column scope description and attributes including variable underpinning the column" ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> .
 
@@ -293,8 +293,8 @@ saved:provenance a owl:ObjectProperty,
     rdfs:range linkml:String ;
     skos:definition "Provenance of an element, or a set of elements. This is distinct from Dublin Core's notion of provenance, which concerns any changes in ownership/custody of the resource since its creation." ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/core/> ;
-    skos:narrowMatch saved:notes,
-        dcterms:provenance .
+    skos:narrowMatch dcterms:provenance,
+        saved:notes .
 
 saved:type a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -313,13 +313,13 @@ saved:ExtColumnDesc a owl:Class,
             owl:maxCardinality 1 ;
             owl:onProperty saved:atomic_name ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty saved:atomic_name ],
-        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( linkml:String [ a rdfs:Datatype ;
                                 owl:onDatatype xsd:string ;
                                 owl:withRestrictions ( [ xsd:pattern "^:?[a-z]+[[a-z]|_|]*$" ] ) ] ) ] ;
+            owl:onProperty saved:atomic_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty saved:atomic_name ] ;
     skos:definition "Catch-all external column description" ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> .
@@ -328,31 +328,31 @@ saved:JobDesc a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "JobDesc" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
+            owl:minCardinality 0 ;
             owl:onProperty job:scope_modelled ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty job:scope_descriptive ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saved:atomic_name ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty saved:title ],
+            owl:onProperty job:scope_descriptive ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:onProperty job:scope_collected ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty job:scope_collected ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty saved:atomic_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty job:type ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty job:scope_collected ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty job:scope_modelled ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty job:scope_descriptive ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty job:scope_descriptive ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty saved:title ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
@@ -361,39 +361,39 @@ saved:JobDesc a owl:Class,
                                 owl:withRestrictions ( [ xsd:pattern "^:?[a-z]+[[a-z]|_|]*$" ] ) ] ) ] ;
             owl:onProperty saved:atomic_name ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty saved:atomic_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty job:type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty job:scope_collected ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty job:type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty job:scope_collected ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty job:scope_modelled ],
-        [ a owl:Restriction ;
             owl:allValuesFrom saved:JobType ;
             owl:onProperty job:type ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saved:atomic_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty job:scope_descriptive ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
+            owl:onProperty saved:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty job:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty job:scope_descriptive ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty job:scope_modelled ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty saved:title ] ;
     skos:definition "Manifest: job specification attributes which specific job sub-classes inherit" ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> .
 
-<https://marine.gov.scot/metadata/saved/schema/JobType#density> a saved:JobType,
-        owl:Class ;
+<https://marine.gov.scot/metadata/saved/schema/JobType#density> a owl:Class,
+        saved:JobType ;
     rdfs:label "density" ;
     rdfs:subClassOf saved:JobType .
 
-<https://marine.gov.scot/metadata/saved/schema/JobType#ignore> a saved:JobType,
-        owl:Class ;
+<https://marine.gov.scot/metadata/saved/schema/JobType#ignore> a owl:Class,
+        saved:JobType ;
     rdfs:label "ignore" ;
     rdfs:subClassOf saved:JobType .
 
@@ -543,70 +543,70 @@ saved:TableDesc a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "TableDesc" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty saved:resource_hash ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saved:resource_hash ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty saved:schema_path_ttl ],
-        [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
-            owl:onProperty saved:schema_path_ttl ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty saved:atomic_name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty saved:resource_path ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
             owl:onProperty saved:schema_path_yaml ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saved:title ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saved:atomic_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty saved:schema_path_yaml ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saved:resource_path ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty saved:schema_path_ttl ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty saved:title ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty saved:resource_path ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty saved:description ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty saved:schema_path_yaml ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty saved:description ],
+            owl:onProperty saved:resource_hash ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty saved:title ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty saved:description ],
+            owl:onProperty saved:schema_path_ttl ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:onProperty saved:resource_hash ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty saved:schema_path_ttl ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saved:resource_path ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( linkml:String [ a rdfs:Datatype ;
                                 owl:onDatatype xsd:string ;
                                 owl:withRestrictions ( [ xsd:pattern "^:?[a-z]+[[a-z]|_|]*$" ] ) ] ) ] ;
+            owl:onProperty saved:atomic_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty saved:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saved:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saved:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saved:resource_hash ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty saved:schema_path_yaml ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty saved:resource_path ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty saved:atomic_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty saved:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saved:schema_path_ttl ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty saved:schema_path_yaml ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty saved:atomic_name ] ;
     skos:definition "Manifest: data source descriptive attributes" ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/job/> .

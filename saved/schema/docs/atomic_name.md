@@ -1,7 +1,6 @@
 
 # Slot: atomic_name
 
-
 Short-form name / atom: lower-case, no special characters excepting underscores
 
 URI: [saved:atomic_name](https://marine.gov.scot/metadata/saved/schema/atomic_name)
@@ -31,4 +30,3 @@ None &#8594;  <sub>1..1</sub> [String](types/String.md)
 | **Exact Mappings:** | | dc:identifier |
 | **Broad Mappings:** | | saved:name |
 |  | | dc:title |
-

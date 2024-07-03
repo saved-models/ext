@@ -1,7 +1,6 @@
 
 # Slot: column
 
-
 Column name in table
 
 URI: [saved:column](https://marine.gov.scot/metadata/saved/schema/column)

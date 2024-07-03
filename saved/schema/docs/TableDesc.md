@@ -1,7 +1,6 @@
 
 # Class: TableDesc
 
-
 Manifest: data source descriptive attributes
 
 URI: [saved:TableDesc](https://marine.gov.scot/metadata/saved/schema/TableDesc)

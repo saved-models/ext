@@ -1,7 +1,6 @@
 
 # Slot: path
 
-
 Path or URI
 
 URI: [saved:path](https://marine.gov.scot/metadata/saved/schema/path)
@@ -28,4 +27,3 @@ None &#8594;  <sub>0..1</sub> [Uri](types/Uri.md)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | linkml:path |
-

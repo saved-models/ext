@@ -1,7 +1,6 @@
 
 # Slot: description
 
-
 Human-readable description of the element
 
 URI: [saved:description](https://marine.gov.scot/metadata/saved/schema/description)
@@ -26,4 +25,3 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | dcterms:description |
-

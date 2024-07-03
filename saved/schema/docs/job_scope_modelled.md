@@ -1,7 +1,6 @@
 
 # Slot: job_scope_modelled
 
-
 A collection of column descriptions which are modelled or simulated
 
 URI: [saved:job_scope_modelled](https://marine.gov.scot/metadata/saved/schema/job_scope_modelled)

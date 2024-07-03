@@ -1,7 +1,6 @@
 
 # Slot: column_modelled
 
-
 Column describes modelled data
 
 URI: [saved:column_modelled](https://marine.gov.scot/metadata/saved/schema/column_modelled)

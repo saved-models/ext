@@ -3,7 +3,6 @@
 
 
 
-
 URI: [saved:LatLonType](https://marine.gov.scot/metadata/saved/schema/LatLonType)
 
 |  |  |  |

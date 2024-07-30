@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.52">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -170,6 +170,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../doc/utils/worked_example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A worked example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../doc/utils/debugging.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Debugging and troubleshooting</span></a>
   </div>
@@ -201,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
 <p>As it stands, the fish data utilities work-flow can be summarised as follows:</p>
 <ol type="1">
 <li>We write <strong>schema</strong> files for data, which are based on <a href="https://linkml.io/linkml/">LinkML</a></li>
-<li>The <code>fisdat(1)</code> utility validates and appends metadata to the description manifest, which is a <strong>data</strong> file in YAML or RDF/TTL, the schema of which is the <a href="`https://marine.gov.scot/metadata/saved/schema/job.yaml`"><code>job</code> component of the data model</a></li>
+<li>The <code>fisdat(1)</code> utility validates and appends metadata to the description manifest, which is a <strong>data</strong> file in YAML or RDF/TTL, the schema of which is the <a href="https://marine.gov.scot/metadata/saved/schema/job.yaml"><code>job</code> component of the data model</a></li>
 <li>The data description manifest can be edited to describe jobs to be run on the data</li>
 <li>Upon upload, the <code>fisup(1)</code> utility:
 <ol type="1">

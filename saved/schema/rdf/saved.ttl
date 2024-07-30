@@ -13,16 +13,16 @@
 saved:meta a saved:SchemaDefinition ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dcterms:title "SAVED meta-model" ;
-    sh:declare [ sh:namespace saved: ;
-            sh:prefix "saved" ],
-        [ sh:namespace dcterms: ;
-            sh:prefix "dcterms" ],
-        [ sh:namespace saved:job_ ;
-            sh:prefix "job" ],
-        [ sh:namespace rap: ;
+    sh:declare [ sh:namespace rap: ;
             sh:prefix "rap" ],
         [ sh:namespace linkml: ;
-            sh:prefix "linkml" ] ;
+            sh:prefix "linkml" ],
+        [ sh:namespace saved: ;
+            sh:prefix "saved" ],
+        [ sh:namespace saved:job_ ;
+            sh:prefix "job" ],
+        [ sh:namespace dcterms: ;
+            sh:prefix "dcterms" ] ;
     saved:default_prefix "saved" ;
     saved:emit_prefixes "job",
         "rap",
@@ -36,7 +36,7 @@ saved:meta a saved:SchemaDefinition ;
         saved:TableDesc ;
     linkml:default_range saved:string ;
     linkml:enums saved:JobType ;
-    linkml:generation_date "2024-07-03T14:15:21"^^xsd:dateTime ;
+    linkml:generation_date "2024-08-06T21:04:43"^^xsd:dateTime ;
     linkml:id <https://marine.gov.scot/metadata/saved/schema/meta/> ;
     linkml:imports saved:collected,
         saved:core,
@@ -93,7 +93,7 @@ saved:meta a saved:SchemaDefinition ;
         saved:title,
         saved:type,
         saved:variable ;
-    linkml:source_file_date "2024-05-17T16:31:37"^^xsd:dateTime ;
+    linkml:source_file_date "2024-08-01T13:51:43"^^xsd:dateTime ;
     linkml:source_file_size 534 ;
     linkml:types saved:LatLonType,
         saved:boolean,
@@ -292,9 +292,9 @@ saved:cage_id a saved:SlotDefinition ;
     dcterms:description "Semi-numeric cage identifier, related to station/site" ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
     linkml:any_of [ a saved:AnonymousSlotExpression ;
-            linkml:range saved:integer ],
+            linkml:range saved:string ],
         [ a saved:AnonymousSlotExpression ;
-            linkml:range saved:string ] ;
+            linkml:range saved:integer ] ;
     linkml:definition_uri saved:cage_id ;
     linkml:is_a saved:column_descriptive ;
     linkml:range saved:string ;
@@ -382,9 +382,9 @@ saved:longitude a saved:SlotDefinition ;
     dcterms:description "Longitude" ;
     skos:inScheme <https://marine.gov.scot/metadata/saved/schema/descriptive/> ;
     linkml:any_of [ a saved:AnonymousSlotExpression ;
-            linkml:range saved:float ],
+            linkml:range saved:LatLonType ],
         [ a saved:AnonymousSlotExpression ;
-            linkml:range saved:LatLonType ] ;
+            linkml:range saved:float ] ;
     linkml:definition_uri saved:longitude ;
     linkml:is_a saved:column_descriptive ;
     linkml:range saved:string ;
